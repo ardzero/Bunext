@@ -1,6 +1,9 @@
 import type { Config } from "tailwindcss";
 import tailwindcssAnimate from "tailwindcss-animate";
 import { utilities } from "./src/styles/tailwind/tailwindUtils";
+import { base } from "./src/styles/tailwind/base";
+import { fontFamily } from "tailwindcss/defaultTheme";
+
 
 
 export default {
@@ -11,8 +14,23 @@ export default {
 		"./src/app/**/*.{js,ts,jsx,tsx,mdx}",
 	],
 	theme: {
+		container: {
+			center: true,
+			padding: {
+				DEFAULT: '1rem',
+				lg: '2rem',
+				xl: '3rem',
+				'2xl': '4rem',
+			},
+			screens: {
+				sm: '640px',
+				md: '768px',
+				lg: '1024px',
+				xl: '1280px',
+				'2xl': '1440px',
+			},
+		},
 		extend: {
-
 			colors: {
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
@@ -59,12 +77,17 @@ export default {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
-			}
+			},
+			fontFamily: {
+				sans: ["var(--font-inter)", ...fontFamily.sans],
+				clash: ["var(--font-clashDisplay)", ...fontFamily.sans],
+			},
 		}
 	},
 
 	plugins: [
 		tailwindcssAnimate,
 		utilities,
+		base,
 	],
 } satisfies Config;
