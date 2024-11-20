@@ -51,7 +51,7 @@ npm run prepare
 - Feature flags
 - Metadata generator for SEO (including apple-touch-icon)
 - Icons using [lucide-react](https://lucide.dev/)
-- Utilities like `qrCode gen, string shortner, uniqueCode gen, email validation, hashing etc`
+- Utilities like `qrCode gen, string shortner, uniqueCode gen, img placeholder, email validation, hashing etc`
 
 ## Config
 

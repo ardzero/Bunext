@@ -6,6 +6,7 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export const isSSR = typeof window === 'undefined';
+export const placeholder = (width: number, height: number) => `https://v0.dev/placeholder.svg?height=${height}&width=${width}`;
 
 // converts smv to base64
 export const svgToBase64 = (str: string) =>
