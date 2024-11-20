@@ -1,0 +1,118 @@
+:root {
+  font-size: 12px;
+}
+
+@media (min-width: 1600px) {
+  :root {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 1800px) {
+  :root {
+    font-size: 17px;
+  }
+}
+
+/* fix layout shift of select box */
+html > body[style] {
+  margin-right: 0 !important;
+}
+
+/* input field fix*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+input {
+  outline: 0 solid transparent;
+}
+
+/* gradients for cricle overlays */
+.bg_primary_radial_gradient {
+  background: hsl(var(--primary) / 0.03);
+  background: radial-gradient(
+    circle,
+    hsl(var(--primary) / 0.5) 0%,
+    hsl(var(--primary) / 0.18) 30%,
+    hsl(var(--primary) / 0.05) 50%,
+    hsl(var(--primary) / 0) 70%
+  );
+  background-size: cover;
+  background-position: center;
+  object-fit: fill;
+}
+.bg_white_radial_gradient {
+  background: hsl(var(--foreground) / 0.01);
+  background: radial-gradient(
+    circle,
+    hsl(var(--foreground) / 0.3) 0%,
+    hsl(var(--foreground) / 0.09) 30%,
+    hsl(var(--foreground) / 0.02) 50%,
+    hsl(var(--foreground) / 0) 70%
+  );
+  background-size: cover;
+  background-position: center;
+  object-fit: fill;
+}
+.dark .bg_primary_radial_gradient {
+  background: hsl(var(--primary) / 0.03);
+  background: radial-gradient(
+    circle,
+    hsl(var(--primary) / 0.4) 0%,
+    hsl(var(--primary) / 0.15) 30%,
+    hsl(var(--primary) / 0.05) 50%,
+    hsl(var(--primary) / 0) 70%
+  );
+  background-size: cover;
+  background-position: center;
+  object-fit: fill;
+}
+
+.boder_primary_gradient {
+  background: hsl(var(--primary) / 0.03);
+  background: radial-gradient(
+    linear,
+    hsl(var(--primary) / 0.5) 0%,
+    hsl(var(--primary) / 0.18) 30%,
+    hsl(var(--primary) / 0.05) 50%,
+    hsl(var(--primary) / 0) 70%
+  );
+  background: linear-gradient(
+    320deg,
+    rgba(119, 47, 253, 1) 0%,
+    rgba(61, 28, 101, 0.7) 15%,
+    rgba(140, 47, 253, 0) 40%,
+    rgba(129, 47, 253, 0) 65%,
+    rgba(89, 34, 152, 0.6) 88%,
+    rgba(119, 47, 253, 1) 100%
+  );
+  background-size: cover;
+  background-position: center;
+  object-fit: fill;
+}
+.boder_primary_gradient::before {
+  content: "";
+  width: calc(100% - 2px);
+  height: calc(100% - 2px);
+  border-radius: 50%;
+  background-color: hsl(var(--background));
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.bg_liner_overlay_gradient {
+  background: linear-gradient(
+    180deg,
+    hsl(var(--background) / 0) 0%,
+    hsl(var(--background) / 1) 100%
+  );
+  /* background: red; */
+}

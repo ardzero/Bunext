@@ -2,6 +2,7 @@ import { fonts } from "@/styles/tailwind/fonts";
 import type { Metadata, Viewport } from "next";
 import { siteMetaData, viewportData } from "@/lib/config/siteConfig";
 import "@/styles/globals.css";
+import "@/styles/customGlobal.css";
 
 export const metadata: Metadata = siteMetaData;
 export const viewport: Viewport = viewportData;

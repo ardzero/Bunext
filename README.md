@@ -44,6 +44,7 @@ npm run prepare
 - Radix UI Primitives
 - Tailwind CSS
 - Tailwind CSS class sorting, merging and linting.
+- CustomFont Optimization with Next.js
 
 <!-- ### [Conventions](./CONVENTION.md) -->
 
