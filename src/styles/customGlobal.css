@@ -32,7 +32,9 @@ input[type="number"] {
 input {
   outline: 0 solid transparent;
 }
-
+::-webkit-scrollbar-thumb:hover {
+  cursor: pointer;
+}
 /* gradients for cricle overlays */
 .bg_primary_radial_gradient {
   background: hsl(var(--primary) / 0.03);

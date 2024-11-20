@@ -11,11 +11,11 @@ export const base = plugin(({ addBase, addVariant, matchVariant }) => {
         '::-webkit-scrollbar': { width: '8px', height: '8px' },
         '::-webkit-scrollbar-thumb': {
             borderRadius: '6px',
-            '@apply bg-primary/35': {},
+            '@apply bg-foreground/20 dark:bg-foreground/15': {},
         },
-        '::-webkit-scrollbar-thumb:hover': { '@apply bg-primary/70': {} },
+        '::-webkit-scrollbar-thumb:hover': { '@apply bg-foreground/35': {} },
         '::-webkit-scrollbar-track': {
-            '@apply bg-primary/20': {},
+            '@apply bg-foreground/5': {},
         },
         '*': { '@apply border-border min-w-0': {} },
     });

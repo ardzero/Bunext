@@ -8,6 +8,8 @@ export const metadata: Metadata = siteMetaData;
 export const viewport: Viewport = viewportData;
 
 import { cn } from "@/lib/utils";
+import { RootProvider } from "@/components/Providers/root-provider";
+import { ModeSelector } from "@/components/ui/themeSelector";
 
 export default function RootLayout({
   children,
@@ -17,7 +19,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={cn("flex min-h-screen flex-col font-sans", fonts)}>
-        {children}
+        <RootProvider>
+          {children}
+          <ModeSelector className="fixed right-2 bottom-2 z-[1005] " />
+        </RootProvider>
       </body>
     </html>
   );
