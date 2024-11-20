@@ -10,6 +10,7 @@ export const viewport: Viewport = viewportData;
 import { cn } from "@/lib/utils";
 import { RootProvider } from "@/components/Providers/root-provider";
 import { ModeSelector } from "@/components/ui/themeSelector";
+import { FeatureFlag } from "@/components/Providers/featureFlagProivder";
 
 export default function RootLayout({
   children,
@@ -21,7 +22,9 @@ export default function RootLayout({
       <body className={cn("flex min-h-screen flex-col font-sans", fonts)}>
         <RootProvider>
           {children}
-          <ModeSelector className="fixed right-2 bottom-2 z-[1005] " />
+          <FeatureFlag featureFlag={["NEXT_THEME", "THEME_BUTTON"]}>
+            <ModeSelector className="fixed right-2 bottom-2 z-[1005] " />
+          </FeatureFlag>
         </RootProvider>
       </body>
     </html>

@@ -1,3 +1,5 @@
+import { FEATURE_FLAGS } from "@/lib/config/featureflags";
+
 import { ThemeProvider } from "@/components/Providers/theme-provider";
 
 export function RootProvider({
@@ -9,7 +11,7 @@ export function RootProvider({
     <>
       <ThemeProvider
         attribute="class"
-        defaultTheme="system"
+        defaultTheme={FEATURE_FLAGS.DEFAULT_THEME}
         enableSystem
         disableTransitionOnChange
       >

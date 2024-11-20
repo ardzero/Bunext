@@ -2,10 +2,10 @@ import type { Metadata, Viewport } from 'next';
 import type { StaticImageData } from 'next/image';
 
 
-import { siteData as siteD } from '../data/siteData';
+import { siteData as siteD } from '@/lib/data/siteData';
 import packageJson from '../../../package.json';
 
-const favicon = siteD.favicon || packageJson.icon;
+
 
 // gets the full remote url
 export const remoteUrl = `https://${siteD.baseUrl?.toLowerCase()}`;
@@ -16,6 +16,8 @@ export const viewportData: Viewport = {
         { media: '(prefers-color-scheme: dark)', color: siteD.themeColorDark },
     ],
 }
+// Metadata
+const favicon = siteD.favicon || packageJson.icon;
 
 export const siteMetaData: Metadata = {
     robots: "index, follow", //  { index: false, follow: false }
@@ -49,7 +51,6 @@ export const siteMetaData: Metadata = {
         apple: favicon,
     },
 }
-
 
 type TgetCustomMetaData = {
     title: string;

@@ -45,6 +45,10 @@ npm run prepare
 - Tailwind CSS
 - Tailwind CSS class sorting, merging and linting.
 - CustomFont Optimization with Next.js
+- Next theme provider (dark and light mode)
+- zod validation
+- proper metadata generator for SEO (including apple-touch-icon)
+- qr code generator function
 
 <!-- ### [Conventions](./CONVENTION.md) -->
 
