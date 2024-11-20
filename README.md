@@ -44,12 +44,14 @@ npm run prepare
 - Radix UI Primitives
 - Tailwind CSS
 - Tailwind CSS class sorting, merging and linting.
-- CustomFont Optimization with Next.js
+- [Shadcn](https://ui.shadcn.com/) components
+- CustomFont Optimization using [Next font](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts)
 - Next theme provider (dark and light mode)
-- zod validation
-- Feature flag provider
-- proper metadata generator for SEO (including apple-touch-icon)
-- qr code generator function
+- [zod](https://zod.dev/) validation
+- Feature flags
+- Metadata generator for SEO (including apple-touch-icon)
+- Icons using [lucide-react](https://lucide.dev/)
+- Utilities like `qrCode gen, string shortner, uniqueCode gen, email validation, hashing etc`
 
 ## Config
 

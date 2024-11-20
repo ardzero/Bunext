@@ -69,7 +69,7 @@ export const generateUniqueCode = (): string | null => {
 
 };
 
-// simple hashing algo
+// simple hashing algorithm (not secure for password hashing)
 export function murmurhash(key: string) {
   const remainder = key.length & 3
   const bytes = key.length - remainder
