@@ -1,6 +1,7 @@
 import { FEATURE_FLAGS } from "@/lib/config/featureflags";
 
 import { ThemeProvider } from "@/components/Providers/theme-provider";
+import { Toaster } from "@/components/ui/toaster";
 
 export function RootProvider({
   children,
@@ -16,6 +17,7 @@ export function RootProvider({
         disableTransitionOnChange
       >
         {children}
+        <Toaster />
       </ThemeProvider>
     </>
   );
