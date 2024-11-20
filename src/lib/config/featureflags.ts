@@ -15,7 +15,7 @@ type FeatureFlagRule = {
 
 export const FEATURE_FLAGS = {
     NEXT_THEME: true,
-    THEME_BUTTON: true, // disabling this will remove the theme selector button thus not allowing the user to change the theme
+    THEME_BUTTON: true, //flase will remove the theme selector button thus not allowing the user to change the theme
     DEFAULT_THEME: "system", // "system | dark | light" only works if NEXT_THEME is true
 
 

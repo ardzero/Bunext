@@ -26,7 +26,7 @@ export const base = plugin(({ addBase, addVariant, matchVariant }) => {
             scrollBehavior: 'smooth',
         },
         body: {
-            '@apply bg-background text-foreground min-h-screen antialiased overflow-x-clip selection:text-white selection:bg-primary':
+            '@apply bg-background text-foreground min-h-screen antialiased overflow-x-clip selection:text-white selection:bg-zinc-700 dark:selection:text-black dark:selection:bg-white':
                 {},
             'font-feature-settings': `'rlig' 1, 'calt' 1`,
         },
