@@ -41,9 +41,7 @@ npm run prepare
 ## Features
 
 - Next.js 15 App Directory
-- [Biome](https://biomejs.dev/) for linting and formatting
 - Tailwind CSS
-- Tailwind CSS class sorting, merging and linting.
 - [Shadcn](https://ui.shadcn.com/) components
 - CustomFont Optimization using [Next font](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts)
 - Next theme provider (dark and light mode)
@@ -52,6 +50,7 @@ npm run prepare
 - Metadata generator for SEO (including apple-touch-icon)
 - Per Link page transition (without any library)
 - Icons using [lucide-react](https://lucide.dev/)
+- [Biome](https://biomejs.dev/) for linting and formatting
 - Utilities like `qrCode gen, string shortner, uniqueCode gen, img placeholder, email validation, hashing etc`
 
 ## Config
