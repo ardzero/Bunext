@@ -57,5 +57,11 @@
 			}
 		}
 	},
-	"javascript": { "formatter": { "quoteStyle": "double" } }
+	"javascript": { "formatter": { "quoteStyle": "double" } }, 
+	"json": {
+		"parser": {
+		  "allowComments": true
+		}
+	  }
+	
 }
