@@ -6,7 +6,7 @@ export const siteData = {
     baseUrl: "bunextt.vercel.app",
     description: "BUNEXT is a Next.js 15 Bun Starter with Shadcn UI, Tailwind CSS, TypeScript, Zod, React Hook Form, React Email, Resend, and React Hot Toast.",
     ogImage: "/ogImage.webp",
-    themeColorLight: "#75b943",
-    themeColorDark: "#75b943",
+    themeColorLight: "#fbf0df",
+    themeColorDark: "#fbf0df",
 
 }
