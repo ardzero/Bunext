@@ -12,6 +12,11 @@ export const placeholder = (width: number, height: number) => `https://v0.dev/pl
 export const svgToBase64 = (str: string) =>
   isSSR ? Buffer.from(str).toString('base64') : window.btoa(str);
 
+// returns a promise that resolves after a given number of milliseconds
+export function sleep(ms: number): Promise<void> {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
 // contaverts text to normal case
 export function convertToNormalCase(inputString: string | undefined) {
   if (!inputString) return inputString;

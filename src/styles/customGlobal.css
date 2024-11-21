@@ -14,6 +14,26 @@
   }
 }
 
+/* page transition */
+.page-transition-easing {
+  transition-property: opacity, transform, filter, background;
+  transition-timing-function: ease-in-out;
+  transition-duration: 300ms;
+}
+@media (prefers-reduced-motion) {
+  .page-transition-easing {
+    transition-property: opacity, transform, filter, background;
+    transition-timing-function: none;
+    transition-duration: 0;
+  }
+}
+.page-transition {
+  opacity: 0;
+  background: black;
+  transform: translateY(40px);
+  filter: blur(12px);
+}
+
 /* fix layout shift of select box */
 html > body[style] {
   margin-right: 0 !important;

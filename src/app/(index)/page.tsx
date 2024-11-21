@@ -1,4 +1,4 @@
-import { Github, Rocket } from "lucide-react";
+import { Github, Rocket, ArrowRightLeft } from "lucide-react";
 
 import {
   Card,
@@ -23,6 +23,7 @@ import {
   Zap,
 } from "lucide-react";
 import Link from "next/link";
+import { TransitionLink } from "@/components/utils/TransitionLink";
 
 export default function Home() {
   const features = [
@@ -135,11 +136,17 @@ export default function Home() {
           <h1 className="mb-4 text-4xl font-extrabold tracking-tight lg:text-5xl">
             Next.js 15 Bun Starter Template
           </h1>
-          <p className="mx-auto max-w-2xl text-xl text-muted-foreground">
+          <p className="mx-auto max-w-2xl text-xl text-muted-foreground mb-8">
             Jumpstart your Next.js projects with this feature-packed starter
             template. Built with performance, accessibility, and developer
             experience in mind.
           </p>
+          <Button size="sm" asChild>
+            <TransitionLink href="/pagetr" className="flex items-center gap-2">
+              <ArrowRightLeft className="h-4 w-4" />
+              <span className="hidden sm:inline">Page Transition</span>
+            </TransitionLink>
+          </Button>
         </section>
         <section className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {features.map((feature, index) => (

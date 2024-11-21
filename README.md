@@ -4,7 +4,7 @@ A Next.js 15 app with Tailwind CSS template.
 
 ## Usage (run locally)
 
-> required `nodejs` or `bun` installed
+> required `bun` or `nodejs` installed
 
 Go to the `root` folder where `package.json` exists.
 
@@ -50,6 +50,7 @@ npm run prepare
 - [zod](https://zod.dev/) validation
 - Feature flags
 - Metadata generator for SEO (including apple-touch-icon)
+- Per Link page transition (without any library)
 - Icons using [lucide-react](https://lucide.dev/)
 - Utilities like `qrCode gen, string shortner, uniqueCode gen, img placeholder, email validation, hashing etc`
 

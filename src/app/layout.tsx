@@ -10,7 +10,7 @@ export const viewport: Viewport = viewportData;
 import { cn } from "@/lib/utils";
 import { RootProvider } from "@/components/Providers/root-provider";
 import { ModeSelector } from "@/components/ui/themeSelector";
-import { FeatureFlag } from "@/components/Providers/featureFlagProivder";
+import { FeatureFlag } from "@/components/utils/featureFlag";
 
 export default function RootLayout({
   children,
@@ -19,7 +19,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn("flex min-h-screen flex-col font-sans", fonts)}>
+      <body
+        className={cn(
+          "flex min-h-screen flex-col font-sans page-transition-easing",
+          fonts
+        )}
+      >
         <RootProvider>
           {children}
           <FeatureFlag featureFlag={["NEXT_THEME", "THEME_BUTTON"]}>
