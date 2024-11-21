@@ -29,7 +29,7 @@
 }
 .page-transition {
   opacity: 0;
-  background: black;
+  background: var(--background);
   transform: translateY(40px);
   filter: blur(12px);
 }
@@ -69,7 +69,7 @@ input {
   background-position: center;
   object-fit: fill;
 }
-.bg_white_radial_gradient {
+.bg_foreground_radial_gradient {
   background: hsl(var(--foreground) / 0.01);
   background: radial-gradient(
     circle,
