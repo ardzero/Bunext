@@ -17,7 +17,7 @@ export const viewportData: Viewport = {
     ],
 }
 // Metadata
-const favicon = siteD.favicon || packageJson.icon;
+const favicon = siteD.favicon;
 
 export const siteMetaData: Metadata = {
     robots: "index, follow", //  { index: false, follow: false }

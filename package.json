@@ -1,7 +1,6 @@
 {
-  "name": "zenetic_esports_a2e",
-  "icon": "favicon.svg",
-  "description": "Zenetic Esports",
+  "name": "bunext",
+  "description": "Bunext - Next.js 15 template with Tailwind CSS and Bun",
   "author": "Ard Astroid <ardastroid@gmail.com>",
   "version": "0.1.0",
   "private": true,
