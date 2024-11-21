@@ -9,7 +9,12 @@
     "build": "next build",
     "start": "next start",
     "preview": "next build && next start",
-    "lint": "next lint"
+    "check": "biome check .",
+    "check:fix": "biome check --write .",
+    "lint": "biome lint .",
+    "lint:fix": "biome lint --write --unsafe .",
+    "format": "biome format .",
+    "format:write": "biome format . --write"
   },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.1.1",
@@ -31,13 +36,17 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@biomejs/biome": "1.9.4",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "15.0.3",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
-    "eslint": "^8",
-    "eslint-config-next": "15.0.3"
-  }
+    "typescript": "^5"
+  },
+  "trustedDependencies": [
+    "@biomejs/biome"
+  ]
 }

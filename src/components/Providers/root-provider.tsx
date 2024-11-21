@@ -4,21 +4,21 @@ import { ThemeProvider } from "@/components/Providers/theme-provider";
 import { Toaster } from "@/components/ui/toaster";
 
 export function RootProvider({
-  children,
+	children,
 }: Readonly<{
-  children: React.ReactNode;
+	children: React.ReactNode;
 }>) {
-  return (
-    <>
-      <ThemeProvider
-        attribute="class"
-        defaultTheme={FEATURE_FLAGS.DEFAULT_THEME}
-        enableSystem
-        disableTransitionOnChange
-      >
-        {children}
-        <Toaster />
-      </ThemeProvider>
-    </>
-  );
+	return (
+		<>
+			<ThemeProvider
+				attribute="class"
+				defaultTheme={FEATURE_FLAGS.DEFAULT_THEME}
+				enableSystem
+				disableTransitionOnChange
+			>
+				{children}
+				<Toaster />
+			</ThemeProvider>
+		</>
+	);
 }

@@ -41,7 +41,7 @@ npm run prepare
 ## Features
 
 - Next.js 15 App Directory
-- Radix UI Primitives
+- [Biome](https://biomejs.dev/) for linting and formatting
 - Tailwind CSS
 - Tailwind CSS class sorting, merging and linting.
 - [Shadcn](https://ui.shadcn.com/) components
