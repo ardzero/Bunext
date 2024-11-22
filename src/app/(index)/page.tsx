@@ -96,7 +96,7 @@ export default function Home() {
 	return (
 		<div className="container mx-auto px-4 py-8">
 			<section className="mb-12 text-center">
-				<h1 className="mb-4 font-clash font-medium text-4xl tracking-tight lg:text-5xl">
+				<h1 className="mb-4 ~text-4xl/5xl font-clash font-medium  tracking-tight lg:~text-5xl">
 					Next.js 15 Bun Starter Template
 				</h1>
 				<p className="mx-auto mb-8 max-w-2xl text-muted-foreground text-xl">

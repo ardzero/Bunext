@@ -5,6 +5,10 @@ export function cn(...inputs: ClassValue[]) {
 	return twMerge(clsx(inputs));
 }
 
+export function absoluteUrl(path: string) {
+	return `${process.env.NEXT_PUBLIC_APP_URL}${path}`;
+}
+
 export const isSSR = typeof window === "undefined";
 export const placeholder = (width: number, height: number) =>
 	`https://v0.dev/placeholder.svg?height=${height}&width=${width}`;
@@ -162,6 +166,3 @@ export const shimmer = (w: number | `${number}`, h: number | `${number}`) => {
 </svg>`;
 };
 
-export function absoluteUrl(path: string) {
-	return `${process.env.NEXT_PUBLIC_APP_URL}${path}`;
-}
