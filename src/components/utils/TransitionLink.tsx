@@ -13,7 +13,6 @@ interface TransitionLinkProps extends LinkProps {
 
 const transitionDuration = 300;
 // make sure to change the transition duration in customGlobal.css
-
 export const PageTransition = async (
 	e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
 	router: ReturnType<typeof useRouter>,
@@ -40,6 +39,7 @@ export const PageTransition = async (
 	body?.classList.remove("page-transition");
 };
 
+// TransitionLink component
 export const TransitionLink: React.FC<TransitionLinkProps> = ({
 	children,
 	href,
