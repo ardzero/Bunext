@@ -11,6 +11,35 @@ interface TransitionLinkProps extends LinkProps {
 	href: string;
 }
 
+const transitionDuration = 300;
+// make sure to change the transition duration in customGlobal.css
+
+export const PageTransition = async (
+	e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+	router: ReturnType<typeof useRouter>,
+	href: string,
+) => {
+	e.preventDefault();
+	const body = document.querySelector("body");
+	const prefersReducedMotion = window.matchMedia(
+		"(prefers-reduced-motion: reduce)",
+	).matches;
+
+	// if user prefers reduced motion, then no transition
+	if (prefersReducedMotion) {
+		router.push(href);
+		return;
+	}
+
+	body?.classList.add("page-transition");
+
+	await sleep(transitionDuration / 2 + 35);
+	router.push(href);
+	await sleep(transitionDuration / 2 + 35);
+
+	body?.classList.remove("page-transition");
+};
+
 export const TransitionLink: React.FC<TransitionLinkProps> = ({
 	children,
 	href,
@@ -18,38 +47,17 @@ export const TransitionLink: React.FC<TransitionLinkProps> = ({
 	...props
 }) => {
 	const router = useRouter();
-	const transitionDuration = 300;
-	// make sure to change the transition duration in customGlobal.css
 
-	const handleTransition = async (
+	const handleTransitionLocal = (
 		e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
 	) => {
-		e.preventDefault();
-		const body = document.querySelector("body");
-		const prefersReducedMotion = window.matchMedia(
-			"(prefers-reduced-motion: reduce)",
-		).matches;
-
-		// if user prefers reduced motion, then no transition
-		if (prefersReducedMotion) {
-			router.push(href);
-			return;
-		}
-
-		body?.classList.add("page-transition");
-
-		await sleep(transitionDuration / 2 + 35);
-		router.push(href);
-		await sleep(transitionDuration / 2 + 35);
-
-		body?.classList.remove("page-transition");
+		PageTransition(e, router, href);
 	};
-
 	return (
 		<Link
 			{...props}
 			href={href}
-			onClick={handleTransition}
+			onClick={handleTransitionLocal}
 			className={className}
 		>
 			{children}

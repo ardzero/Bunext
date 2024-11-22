@@ -1,5 +1,5 @@
 // edit the webmanifest file in /public to change the name, short_name, and icons in android
-// in webmanifest, background_color is the color of the app icon's background 
+// in webmanifest, theme_color is the color of the app icon's background and 
 export const siteData = {
 	favicon: "/favicon.svg", // .svg / .ico / .png
 	name: "BUNEXT - Next.js 15 Bun Starter",
@@ -14,8 +14,8 @@ export const siteData = {
 		dark: "#fbf0df",
 	},
 	author: {
-		name: "farhan",
-		url: "https://farhannur.com",
+		name: "darkidop",
+		url: "https://zeneticesports.com/darkid",
 	},
 	keywords: [
 		"Next.js",

@@ -23,14 +23,9 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body
-				className={cn(
-					"page-transition-easing flex min-h-screen flex-col font-sans",
-					fonts,
-				)}
-			>
+			<body className={cn("page-transition-easing font-sans", fonts)}>
 				<RootProvider>
-					<div data-wrapper="" className="border-border/40 dark:border-border ">
+					<div data-wrapper="" className="">
 						<div className="mx-auto flex min-h-screen w-full flex-col border-border/40 min-[1800px]:max-w-[1536px] min-[1800px]:border-x dark:border-border">
 							<SiteHeader />
 							<main className="flex-1">{children}</main>
