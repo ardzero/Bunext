@@ -30,14 +30,6 @@ bun run dev
 npm run dev
 ```
 
-## Commit/Push
-
-Prepare Husky
-
-```bash
-npm run prepare
-```
-
 ## Features
 
 - Next.js 15 App Directory

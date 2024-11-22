@@ -1,4 +1,6 @@
 import { Icons } from "@/components/utils/icons";
+import type { TSimpleFooterData } from "@/types";
+
 export const footerData = {
 	company: {
 		logo: "/fac",
@@ -59,20 +61,22 @@ export const footerData = {
 		],
 	},
 };
-export const simpleFooterData = {
-	texts: [
-		{
-			pretext: "Built by",
-			label: "Farhan Ashhab Nur (@darkidop)",
-			url: "https://github.com/darkidop",
-		},
-		{
-			pretext: "The source code is available on",
-			label: "GitHub",
-			url: "https://github.com/DarkidOP/Bunext",
-		},
-	],
-	socialLinks: [
-		{ lable: "Github", icon: Icons.gitHub, url: "https://github.com/darkidop" },
-	],
-};
+
+
+// export const simpleFooterData: TSimpleFooterData = {
+// 	texts: [
+// 		{
+// 			pretext: "Built by",
+// 			label: "Farhan Ashhab Nur (@darkidop)",
+// 			url: "https://github.com/darkidop",
+// 		},
+// 		{
+// 			pretext: "The source code is available on",
+// 			label: "GitHub",
+// 			url: "https://github.com/DarkidOP/Bunext",
+// 		},
+// 	],
+// 	socialLinks: [
+// 		{ label: "Github", icon: Icons.gitHub, href: "https://github.com/darkidop" },
+// 	],
+// };

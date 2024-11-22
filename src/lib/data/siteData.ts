@@ -1,6 +1,8 @@
+import type { TSiteData, TtwitterMetaData, TMetadataIcons } from "@/types";
+
 // edit the webmanifest file in /public to change the name, short_name, and icons in android
 // in webmanifest, theme_color is the color of the app icon's background and
-export const siteData = {
+export const siteData: TSiteData = {
 	favicon: "/favicon.svg", // .svg / .ico / .png
 	name: "BUNEXT - Next.js 15 Bun Starter",
 	shortName: "BUNEXT",
@@ -34,7 +36,10 @@ export const siteData = {
 	robotsDefault: "index, follow", // { index: false, follow: false }
 };
 
-export const twitterMetaData = {
+
+
+
+export const twitterMetaData: TtwitterMetaData = {
 	card: "summary_large_image",
 	title: siteData.name,
 	description: siteData.description,
@@ -43,7 +48,7 @@ export const twitterMetaData = {
 };
 
 // By default, it uses the favicon mentioned at the top
-export const icons = {
+export const icons: TMetadataIcons = {
 	icon: siteData.favicon, // "/favicon.svg",
 	shortcut: siteData.favicon, // "/favicon-16x16.png",
 	apple: siteData.favicon, // "/apple-touch-icon.png",

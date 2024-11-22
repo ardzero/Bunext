@@ -1,5 +1,5 @@
 import { murmurhash } from "@/lib/utils";
-import type { User, UserRole } from "./user";
+import type { User, UserRole } from "@/lib/config/user";
 
 export type FeatureFlagName = keyof typeof FEATURE_FLAGS;
 // type for multiple allowances
@@ -7,11 +7,11 @@ type FeatureFlagRule = {
 	percentageOfUsers?: number;
 	userRoles?: UserRole[];
 } & (
-	| {
+		| {
 			percentageOfUsers: number;
-	  }
-	| { userRoles: UserRole[] }
-);
+		}
+		| { userRoles: UserRole[] }
+	);
 
 export const FEATURE_FLAGS = {
 	NEXT_THEME: true,
