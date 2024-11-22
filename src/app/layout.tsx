@@ -1,6 +1,6 @@
-import type { Metadata, Viewport } from "next";
 import { siteMetaData, viewportData } from "@/lib/config/siteConfig";
 import { fonts } from "@/styles/tailwind/fonts";
+import type { Metadata, Viewport } from "next";
 import "@/styles/globals.css";
 import "@/styles/customGlobal.css";
 
@@ -10,10 +10,10 @@ export const viewport: Viewport = viewportData;
 import { RootProvider } from "@/components/Providers/root-provider";
 import { FeatureFlag } from "@/components/utils/featureFlag";
 
-import { cn } from "@/lib/utils";
+import { SiteHeader } from "@/components/navigation/site-header";
 // components
 import { ModeSelector } from "@/components/ui/themeSelector";
-import { SiteHeader } from "@/components/navigation/site-header";
+import { cn } from "@/lib/utils";
 
 export default function RootLayout({
 	children,
@@ -30,7 +30,7 @@ export default function RootLayout({
 			>
 				<RootProvider>
 					<div data-wrapper="" className="border-border/40 dark:border-border">
-						<div className="mx-auto w-full border-border/40 dark:border-border min-[1800px]:max-w-[1536px] min-[1800px]:border-x">
+						<div className="mx-auto w-full border-border/40 min-[1800px]:max-w-[1536px] min-[1800px]:border-x dark:border-border">
 							<SiteHeader />
 							<main className="flex-1">{children}</main>
 						</div>

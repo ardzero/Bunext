@@ -39,11 +39,11 @@ export const twitterMetaData = {
 	description: siteData.description,
 	images: siteData.ogImage,
 	creator: "@darkidop", //twitter username of author
-}
+};
 
 // By default, it uses the favicon mentioned at the top
 export const icons = {
 	icon: siteData.favicon, // "/favicon.svg",
 	shortcut: siteData.favicon, // "/favicon-16x16.png",
 	apple: siteData.favicon, // "/apple-touch-icon.png",
-}
+};

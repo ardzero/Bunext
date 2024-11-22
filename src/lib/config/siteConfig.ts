@@ -1,20 +1,31 @@
 import type { Metadata, Viewport } from "next";
 import type { StaticImageData } from "next/image";
 
-import { siteData, twitterMetaData as twData, icons } from "@/lib/data/siteData";
+import {
+	icons,
+	siteData,
+	twitterMetaData as twData,
+} from "@/lib/data/siteData";
 import packageJson from "../../../package.json";
 
 // gets the full remote url
-export const remoteUrl = siteData.baseUrl?.startsWith('https://') ? siteData.baseUrl : `https://${siteData.baseUrl?.toLowerCase()}`;
+export const remoteUrl = siteData.baseUrl?.startsWith("https://")
+	? siteData.baseUrl
+	: `https://${siteData.baseUrl?.toLowerCase()}`;
 
 export const viewportData: Viewport = {
 	themeColor: [
-		{ media: "(prefers-color-scheme: light)", color: siteData.metadata_color.light },
-		{ media: "(prefers-color-scheme: dark)", color: siteData.metadata_color.dark },
+		{
+			media: "(prefers-color-scheme: light)",
+			color: siteData.metadata_color.light,
+		},
+		{
+			media: "(prefers-color-scheme: dark)",
+			color: siteData.metadata_color.dark,
+		},
 	],
 };
 // Metadata
-
 
 export const siteMetaData: Metadata = {
 	// title: {
@@ -89,7 +100,6 @@ type TgetCustomMetaData = {
 	robots?: "index, follow" | "noindex, nofollow";
 };
 
-
 // helpful for defining custom metadata for pages without clutter
 export function getCustomMetaData({
 	title,
@@ -138,7 +148,9 @@ export function getCustomMetaData({
 			description: description || siteData.description,
 			images: {
 				url:
-					typeof ogImage === "string" ? ogImage : ogImage?.src || siteData.ogImage,
+					typeof ogImage === "string"
+						? ogImage
+						: ogImage?.src || siteData.ogImage,
 				width: 1200,
 				height: 630,
 			},
@@ -149,7 +161,9 @@ export function getCustomMetaData({
 			description: twData.description,
 			site: `@${publisher || siteData.publisher}`,
 			images:
-				typeof ogImage === "string" ? ogImage : ogImage?.src || siteData.ogImage,
+				typeof ogImage === "string"
+					? ogImage
+					: ogImage?.src || siteData.ogImage,
 			creator: twCreator || twData.creator,
 		},
 		alternates: {

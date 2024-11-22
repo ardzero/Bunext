@@ -1,9 +1,9 @@
 import { footerData, simpleFooterData } from "@/lib/data/footer-data";
 export function simpleFooter() {
 	return (
-		<footer className="border-t border-border/40 py-6 dark:border-border md:px-8 md:py-0">
+		<footer className="border-border/40 border-t py-6 md:px-8 md:py-0 dark:border-border">
 			<div className="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
-				<p className="text-balance text-center text-sm leading-loose text-muted-foreground md:text-left">
+				<p className="text-balance text-center text-muted-foreground text-sm leading-loose md:text-left">
 					{simpleFooterData?.texts.map((item, index) => (
 						<>
 							{item.pretext}{" "}

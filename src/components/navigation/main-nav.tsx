@@ -3,8 +3,8 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import { siteData } from "@/lib/data/siteData";
 import { navData } from "@/lib/data/nav-data";
+import { siteData } from "@/lib/data/siteData";
 import { cn } from "@/lib/utils";
 import { AppWindow } from "lucide-react";
 
@@ -19,7 +19,7 @@ export function MainNav() {
 					{siteData.name}
 				</span>
 			</Link>
-			<nav className="flex items-center gap-4 text-sm xl:gap-6 font-medium">
+			<nav className="flex items-center gap-4 font-medium text-sm xl:gap-6">
 				{navData?.links?.map((link) => (
 					<Link
 						key={link.href}
