@@ -18,7 +18,7 @@ export const navData: TnavData = {
 		{
 			label: "GitHub",
 			href: "https://github.com/DarkidOP/Bunext",
-			icon: Icons.gitHub,
+			Icon: Icons.gitHub,
 		},
 	],
 };

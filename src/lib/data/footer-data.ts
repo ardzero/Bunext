@@ -77,6 +77,6 @@ export const simpleFooterData: TSimpleFooterData = {
 		},
 	],
 	socialLinks: [
-		{ label: "Github", icon: Icons.gitHub, href: "https://github.com/darkidop" },
+		{ label: "Github", Icon: Icons.gitHub, href: "https://github.com/darkidop" },
 	],
 };

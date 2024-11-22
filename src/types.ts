@@ -3,7 +3,7 @@ import type { LucideIcon } from "lucide-react";
 export type TLink = {
     label: string;
     href: string;
-    icon?: LucideIcon | React.ComponentType<React.HTMLAttributes<SVGElement>>;
+    Icon?: LucideIcon | React.ComponentType<React.HTMLAttributes<SVGElement>>;
     external?: boolean;
 };
 export type TnavData = {

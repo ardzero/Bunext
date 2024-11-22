@@ -17,20 +17,23 @@ export function SiteHeader() {
 						<Search />
 					</div> */}
 					<nav className="flex items-center gap-0.5">
-						{navData?.iconButtons.map((social) => (
-							<Button
-								key={social.href}
-								variant="ghost"
-								size="icon"
-								className="h-8 w-8 px-0"
-								asChild
-							>
-								<Link href={social.href} target="_blank" rel="noreferrer">
-									<social.icon className="h-4 w-4" />
-									<span className="sr-only">{social.label}</span>
-								</Link>
-							</Button>
-						))}
+						{navData?.iconButtons.map((social) => {
+							const Icon = social.Icon;
+							return (
+								<Button
+									key={social.href}
+									variant="ghost"
+									size="icon"
+									className="h-8 w-8 px-0"
+									asChild
+								>
+									<Link href={social.href} target="_blank" rel="noreferrer">
+										{Icon && <Icon className="h-4 w-4" />}
+										<span className="sr-only">{social.label}</span>
+									</Link>
+								</Button>
+							);
+						})}
 						<Button size="sm" variant="outline" className="h-8 " asChild>
 							<a
 								href="https://github.com/DarkidOP/Bunext/generate"
