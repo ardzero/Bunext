@@ -17,7 +17,6 @@ export const FEATURE_FLAGS = {
 	NEXT_THEME: true,
 	THEME_BUTTON: true, //flase will remove the theme selector button thus not allowing the user to change the theme
 	DEFAULT_THEME: "system", // "system | dark | light" only works if NEXT_THEME is true
-	FLUID_TAILWIND: true, //The `min-*` and `max-*` variants are not supported while using fluid-tailwind
 
 	// example of multiple allowances
 	// 25% of users can see this feature
