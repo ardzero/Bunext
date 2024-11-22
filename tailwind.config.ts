@@ -1,12 +1,12 @@
 import type { Config } from "tailwindcss";
 // plugins
 import tailwindcssAnimate from "tailwindcss-animate";
-import fluid, { extract, screens, fontSize } from 'fluid-tailwind'
+// import fluid, { extract, screens, fontSize } from 'fluid-tailwind'
 // custom configs
 import { fontFamily } from "tailwindcss/defaultTheme";
 import { base } from "./src/styles/tailwind/base";
 import { utilities } from "./src/styles/tailwind/tailwindUtils";
-import { FEATURE_FLAGS } from "./src/lib/config/featureflags";
+// import { FEATURE_FLAGS } from "./src/lib/config/featureflags";
 
 export default {
 	darkMode: ["class"],
@@ -16,10 +16,10 @@ export default {
 			"./src/components/**/*.{js,ts,jsx,tsx,mdx}",
 			"./src/app/**/*.{js,ts,jsx,tsx,mdx}",
 		],
-		...(FEATURE_FLAGS.FLUID_TAILWIND ? { extract } : {}),
+		// ...(FEATURE_FLAGS.FLUID_TAILWIND ? { extract } : {}),
 	},
 	theme: {
-		...(FEATURE_FLAGS.FLUID_TAILWIND ? { screens, fontSize } : {}),
+		// ...(FEATURE_FLAGS.FLUID_TAILWIND ? { screens, fontSize } : {}),
 		container: {
 			center: true,
 			padding: {
@@ -95,6 +95,6 @@ export default {
 		tailwindcssAnimate,
 		utilities,
 		base,
-		...(FEATURE_FLAGS.FLUID_TAILWIND ? [fluid] : []),
+		// ...(FEATURE_FLAGS.FLUID_TAILWIND ? [fluid] : []),
 	],
 } satisfies Config;
