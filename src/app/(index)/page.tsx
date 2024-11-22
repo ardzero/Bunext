@@ -1,4 +1,4 @@
-import { ArrowRightLeft, Github, Rocket } from "lucide-react";
+import { ArrowRightLeft, Github, Plus, Rocket } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -34,19 +34,9 @@ export default function Home() {
 				"Utilizing the latest Next.js features for optimal performance.",
 		},
 		{
-			title: "Radix UI Primitives",
-			icon: Shapes,
-			description: "Accessible and customizable UI components.",
-		},
-		{
 			title: "Tailwind CSS",
 			icon: Palette,
 			description: "Utility-first CSS framework for rapid UI development.",
-		},
-		{
-			title: "Tailwind CSS Optimization",
-			icon: Wand2,
-			description: "Class sorting, merging, and linting for optimal CSS.",
 		},
 		{
 			title: "Shadcn Components",
@@ -60,9 +50,24 @@ export default function Home() {
 			description: "Using Next Font for optimized font loading and display.",
 		},
 		{
+			title: "Lucide React Icons",
+			icon: Zap,
+			description: "Beautiful, consistent, and customizable icons.",
+		},
+		{
 			title: "Next Theme Provider",
 			icon: Moon,
 			description: "Easy implementation of dark and light mode.",
+		},
+		{
+			title: "Metadata Generator",
+			icon: Search,
+			description: "SEO optimization including apple-touch-icon generation.",
+		},
+		{
+			title: "Feature Flags",
+			icon: Flag,
+			description: "Implement and manage feature toggles with ease.",
 		},
 		{
 			title: "Zod Validation",
@@ -71,19 +76,21 @@ export default function Home() {
 				"Runtime type checking and validation for JavaScript and TypeScript.",
 		},
 		{
-			title: "Feature Flags",
-			icon: Flag,
-			description: "Implement and manage feature toggles with ease.",
+			title: "Page Transitions",
+			icon: ArrowRightLeft,
+			description:
+				"Per-link page transitions without any additional libraries.",
 		},
 		{
-			title: "Metadata Generator",
-			icon: Search,
-			description: "SEO optimization including apple-touch-icon generation.",
+			title: "Fluid Tailwind",
+			icon: Wand2,
+			description: "Easier responsive design with fluid utilities.",
 		},
 		{
-			title: "Lucide React Icons",
-			icon: Zap,
-			description: "Beautiful, consistent, and customizable icons.",
+			title: "Biome",
+			icon: SlidersHorizontal,
+			description:
+				"Modern linting and formatting for JavaScript and TypeScript.",
 		},
 		{
 			title: "Utility Functions",
@@ -126,6 +133,18 @@ export default function Home() {
 						</CardContent>
 					</Card>
 				))}
+				<Card className="text-foreground/30">
+					<CardHeader></CardHeader>
+					<CardContent className="text-center">
+						<div className="flex items-center justify-center gap-2 -ml-3 flex">
+							<Plus className="h-8 w-8" />
+							<h1 className="text-2xl font-bold">Loading?..</h1>
+						</div>
+						<CardDescription className="text-foreground/30">
+							More features coming soon... *probably
+						</CardDescription>
+					</CardContent>
+				</Card>
 			</section>
 		</div>
 	);
