@@ -1,0 +1,21 @@
+{
+	"name": "BUNEXT - Next.js 15 Bun Starter",
+	"short_name": "BUNEXT",
+	"description": "BUNEXT is a Next.js 15 Bun Starter with Shadcn UI, Tailwind CSS, TypeScript, Zod, React Hook Form, React Email, Resend, and React Hot Toast.",
+	"start_url": "/",
+	"display": "standalone",
+	"background_color": "#fbf0df",
+	"theme_color": "#fbf0df",
+	"icons": [
+		{
+			"src": "/favicon-16x16.png",
+			"sizes": "16x16",
+			"type": "image/png"
+		},
+		{
+			"src": "/apple-touch-icon.png",
+			"sizes": "180x180",
+			"type": "image/png"
+		}
+	]
+}

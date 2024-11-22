@@ -1,57 +1,86 @@
 import type { Metadata, Viewport } from "next";
 import type { StaticImageData } from "next/image";
 
-import { siteData as siteD } from "@/lib/data/siteData";
+import { siteData, twitterMetaData as twData, icons } from "@/lib/data/siteData";
 import packageJson from "../../../package.json";
 
 // gets the full remote url
-export const remoteUrl = `https://${siteD.baseUrl?.toLowerCase()}`;
+export const remoteUrl = siteData.baseUrl?.startsWith('https://') ? siteData.baseUrl : `https://${siteData.baseUrl?.toLowerCase()}`;
 
 export const viewportData: Viewport = {
 	themeColor: [
-		{ media: "(prefers-color-scheme: light)", color: siteD.themeColorLight },
-		{ media: "(prefers-color-scheme: dark)", color: siteD.themeColorDark },
+		{ media: "(prefers-color-scheme: light)", color: siteData.metadata_color.light },
+		{ media: "(prefers-color-scheme: dark)", color: siteData.metadata_color.dark },
 	],
 };
 // Metadata
-const favicon = siteD.favicon;
+
 
 export const siteMetaData: Metadata = {
-	robots: "index, follow", //  { index: false, follow: false }
-	publisher: siteD.publisher,
-	title: siteD.name,
-	description: siteD.description,
-
+	// title: {
+	// 	default: siteData.name,
+	// 	template: `%s / ${siteData.name}`,
+	// },
+	title: siteData.name,
+	description: siteData.description,
+	robots: siteData.robotsDefault, //  { index: false, follow: false }
+	publisher: siteData.publisher,
+	metadataBase: new URL(remoteUrl),
+	keywords: siteData.keywords,
+	authors: [
+		{
+			name: siteData.author.name,
+			url: siteData.author.url,
+		},
+	],
+	creator: siteData.author.name,
+	// og metadata
 	openGraph: {
 		type: "website",
+		locale: "en_US",
 		url: remoteUrl,
-		siteName: siteD.baseUrl,
-		title: siteD.name,
-		description: siteD.description,
-		images: {
-			url: siteD.ogImage,
-			width: 1200,
-			height: 630,
-		},
+		siteName: siteData.baseUrl,
+		title: siteData.name,
+		description: siteData.description,
+		images: [
+			{
+				url: siteData.ogImage,
+				width: 1200,
+				height: 630,
+				alt: siteData.name,
+			},
+		],
 	},
+	// twitter metadata
 	twitter: {
 		card: "summary_large_image",
-		site: `@${siteD.publisher}`,
-		images: siteD.ogImage,
+		title: twData.title,
+		description: twData.description,
+		site: `@${siteData.publisher}`,
+		images: [twData.images],
+		creator: twData.creator,
 	},
 	alternates: {
 		canonical: remoteUrl,
 	},
-	icons: {
-		icon: favicon,
-		shortcut: favicon,
-		apple: favicon,
-	},
+
+	icons: icons,
+	manifest: `${remoteUrl}/site.webmanifest`,
 };
 
+type TAuthor = {
+	name: string;
+	url: string;
+};
 type TgetCustomMetaData = {
 	title: string;
+	description?: string;
+	publisher?: string;
 	url?: string;
+	keywords?: string[];
+	authors?: TAuthor[];
+	creator?: string;
+	twCreator?: string;
 	titleSuffix?: boolean;
 	shortSuffix?: boolean;
 	ogTitleSuffix?: boolean;
@@ -60,9 +89,17 @@ type TgetCustomMetaData = {
 	robots?: "index, follow" | "noindex, nofollow";
 };
 
+
+// helpful for defining custom metadata for pages without clutter
 export function getCustomMetaData({
 	title,
+	description,
+	publisher,
 	url,
+	keywords,
+	authors,
+	creator,
+	twCreator,
 	titleSuffix = true,
 	shortSuffix,
 	ogTitleSuffix = true,
@@ -70,45 +107,56 @@ export function getCustomMetaData({
 	ogImage,
 	robots = "index, follow",
 }: TgetCustomMetaData) {
-	const suffix = shortSuffix ? siteD.shortName : siteD.name;
+	const suffix = shortSuffix ? siteData.shortName : siteData.name;
 	const customTitle = titleSuffix ? `${title} / ${suffix}` : title;
 
-	const ogSuffix = longogTitleSuffix ? siteD.name : siteD.shortName;
+	const ogSuffix = longogTitleSuffix ? siteData.name : siteData.shortName;
 	const ogTitle = ogTitleSuffix ? `${title} / ${ogSuffix}` : title;
 
 	const md: Metadata = {
-		robots: robots, //  { index: false, follow: false }
-		publisher: siteD.publisher,
 		title: customTitle,
-		description: siteD.description,
+		description: description || siteData.description,
 
+		robots: robots || siteData.robotsDefault, //  { index: false, follow: false }
+		publisher: publisher || siteData.publisher,
+		metadataBase: new URL(url || remoteUrl),
+		keywords: keywords || siteData.keywords,
+		authors: authors || [
+			{
+				name: siteData.author.name,
+				url: siteData.author.url,
+			},
+		],
+		creator: creator || siteData.author.name,
+		// og metadata
 		openGraph: {
 			type: "website",
+			locale: "en_US",
 			url: url || remoteUrl,
-			siteName: siteD.baseUrl,
+			siteName: siteData.baseUrl,
 			title: ogTitle,
-			description: siteD.description,
+			description: description || siteData.description,
 			images: {
 				url:
-					typeof ogImage === "string" ? ogImage : ogImage?.src || siteD.ogImage,
+					typeof ogImage === "string" ? ogImage : ogImage?.src || siteData.ogImage,
 				width: 1200,
 				height: 630,
 			},
 		},
 		twitter: {
 			card: "summary_large_image",
-			site: `@${siteD.publisher}`,
+			title: twData.title,
+			description: twData.description,
+			site: `@${publisher || siteData.publisher}`,
 			images:
-				typeof ogImage === "string" ? ogImage : ogImage?.src || siteD.ogImage,
+				typeof ogImage === "string" ? ogImage : ogImage?.src || siteData.ogImage,
+			creator: twCreator || twData.creator,
 		},
 		alternates: {
 			canonical: remoteUrl,
 		},
-		icons: {
-			icon: favicon,
-			shortcut: favicon,
-			apple: favicon,
-		},
+		icons: icons,
+		manifest: `${remoteUrl}/site.webmanifest`,
 	};
 	return md;
 }
