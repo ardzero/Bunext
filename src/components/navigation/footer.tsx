@@ -4,7 +4,7 @@ export function SimpleFooter({ className }: { className?: string }) {
 	return (
 		<footer
 			className={cn(
-				"border-border/40 border-t py-6 md:px-8 md:py-0 dark:border-border max-h-24",
+				"max-h-24 border-border/40 border-t py-6 md:px-8 md:py-0 dark:border-border",
 				className,
 			)}
 		>
@@ -18,7 +18,7 @@ export function SimpleFooter({ className }: { className?: string }) {
 								href={item.url}
 								target="_blank"
 								rel="noreferrer"
-								className="font-medium hover:underline underline-offset-4"
+								className="font-medium underline-offset-4 hover:underline"
 							>
 								{item.label}
 							</a>
