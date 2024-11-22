@@ -1,4 +1,4 @@
-import { AppWindow, ArrowRightLeft } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 
@@ -10,11 +10,10 @@ export default function Contact() {
 			<h1 className="mb-4 font-clash font-medium text-4xl tracking-tight lg:text-5xl">
 				Coming soon
 			</h1>
-
 			<Button size="sm" asChild>
 				<TransitionLink href="/" className="flex items-center gap-2">
-					<ArrowRightLeft className="h-4 w-4" />
-					<span className="hidden sm:inline">Home</span>
+					<ArrowLeft className="h-4 w-4" />
+					<span className="">Home</span>
 				</TransitionLink>
 			</Button>
 		</div>

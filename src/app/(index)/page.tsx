@@ -107,7 +107,8 @@ export default function Home() {
 				<Button size="sm" asChild>
 					<TransitionLink href="/pagetr" className="flex items-center gap-2">
 						<ArrowRightLeft className="h-4 w-4" />
-						<span className="hidden sm:inline">Page Transition</span>
+						<span className="">Page Transition</span>
+						{/* <span className="hidden sm:inline">Page Transition</span> */}
 					</TransitionLink>
 				</Button>
 			</section>

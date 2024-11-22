@@ -69,7 +69,7 @@ export const simpleFooterData = {
 		{
 			pretext: "The source code is available on",
 			label: "GitHub",
-			url: "https://github.com/darkidop",
+			url: "https://github.com/DarkidOP/Bunext",
 		},
 	],
 	socialLinks: [

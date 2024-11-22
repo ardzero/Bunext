@@ -29,7 +29,7 @@ export default function PageTr() {
 			<Button size="sm" asChild>
 				<TransitionLink href="/" className="flex items-center gap-2">
 					<ArrowRightLeft className="h-4 w-4" />
-					<span className="hidden sm:inline">Home</span>
+					<span className="">Home</span>
 				</TransitionLink>
 			</Button>
 		</div>
