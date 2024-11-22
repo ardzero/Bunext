@@ -7,11 +7,11 @@ type FeatureFlagRule = {
 	percentageOfUsers?: number;
 	userRoles?: UserRole[];
 } & (
-		| {
+	| {
 			percentageOfUsers: number;
-		}
-		| { userRoles: UserRole[] }
-	);
+	  }
+	| { userRoles: UserRole[] }
+);
 
 export const FEATURE_FLAGS = {
 	NEXT_THEME: true,

@@ -3,7 +3,6 @@ import type { Config } from "tailwindcss";
 import tailwindcssAnimate from "tailwindcss-animate";
 // import fluid, { extract, screens, fontSize } from 'fluid-tailwind'
 
-
 // custom configs
 import { fontFamily } from "tailwindcss/defaultTheme";
 import { base } from "./src/styles/tailwind/base";

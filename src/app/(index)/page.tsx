@@ -103,7 +103,7 @@ export default function Home() {
 	return (
 		<div className="container mx-auto px-4 py-8">
 			<section className="mb-12 text-center">
-				<h1 className="mb-4 ~text-4xl/5xl font-clash font-medium  tracking-tight lg:~text-5xl">
+				<h1 className="mb-4 text-4xl font-clash font-medium tracking-tight">
 					Next.js 15 Bun Starter Template
 				</h1>
 				<p className="mx-auto mb-8 max-w-2xl text-muted-foreground text-xl">
@@ -136,7 +136,7 @@ export default function Home() {
 				<Card className="text-foreground/30">
 					<CardHeader></CardHeader>
 					<CardContent className="text-center">
-						<div className="flex items-center justify-center gap-2 -ml-3 flex">
+						<div className="flex items-center justify-center gap-2 -ml-3">
 							<Plus className="h-8 w-8" />
 							<h1 className="text-2xl font-bold">Loading?..</h1>
 						</div>
