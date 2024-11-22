@@ -6,7 +6,7 @@ import { TransitionLink } from "@/components/utils/TransitionLink";
 
 export default function Contact() {
 	return (
-		<div className="container mx-auto flex flex-col items-center place-content-center px-4 py-8 h-full min-h-[600px]">
+		<div className="container mx-auto flex h-full min-h-[600px] flex-col place-content-center items-center px-4 py-8">
 			<h1 className="mb-4 font-clash font-medium text-4xl tracking-tight lg:text-5xl">
 				Coming soon
 			</h1>

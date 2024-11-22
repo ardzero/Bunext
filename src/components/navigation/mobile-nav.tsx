@@ -10,8 +10,8 @@ import { useMetaColor } from "@/hooks/use-meta-color";
 import { cn } from "@/lib/utils";
 
 import { navData } from "@/lib/data/nav-data";
-import { AppWindow } from "lucide-react";
 import { siteData } from "@/lib/data/siteData";
+import { AppWindow } from "lucide-react";
 export function MobileNav() {
 	const [open, setOpen] = React.useState(false);
 	const { setMetaColor, metaColor } = useMetaColor();
