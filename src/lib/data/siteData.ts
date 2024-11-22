@@ -1,6 +1,3 @@
-import type { Metadata } from "next";
-import { remoteUrl } from "../config/siteConfig";
-
 // edit the webmanifest file in /public to change the name, short_name, and icons in android
 export const siteData = {
 	favicon: "/favicon.svg", // .svg / .ico / .png

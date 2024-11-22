@@ -62,7 +62,19 @@ npm run prepare
 - advance Metadata config in `src/lib/config/siteConfig.ts`
 - for base styles (scrollbar style, selection highlighting etc) go to `src/styles/tailwind/base.ts`
 
-<!-- ### [Conventions](./CONVENTION.md) -->
 
+## Roadmap
+
+- [x] add next themes
+- [x] feature flags
+- [ ] add sample responsive nav
+- [ ] add sample footer
+- [ ] add sample server actions
+- [ ] add a branch with animation features
+- [ ] add a branch with drizzle orm
+- [ ] add simple hero template
+
+
+<!-- ### [Conventions](./CONVENTION.md) -->
 <!-- ## License
 Licensed under the [MIT license](./LICENSE). -->
