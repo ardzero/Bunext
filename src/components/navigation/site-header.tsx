@@ -12,7 +12,7 @@ export function SiteHeader() {
 			<div className="flex h-14 items-center px-4">
 				<MainNav />
 				<MobileNav />
-				<div className="flex flex-1 items-center justify-between gap-2 md:justify-end">
+				<div className="flex flex-1 items-center justify-end gap-2">
 					{/* <div className="w-full flex-1 md:w-auto md:flex-none">
 						<Search />
 					</div> */}

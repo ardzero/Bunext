@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { TransitionLink } from "@/components/utils/TransitionLink";
 import Link from "next/link";
 
-export default function Home() {
+export default function PageTr() {
 	return (
 		<div className="container mx-auto flex flex-col items-center px-4 py-8">
 			<h1 className="mb-4 font-clash font-medium text-4xl tracking-tight lg:text-5xl">
