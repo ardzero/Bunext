@@ -26,7 +26,11 @@
 				"useExhaustiveDependencies": "warn",
 				"useHookAtTopLevel": "error"
 			},
-			"style": { "noNamespace": "error", "useAsConstAssertion": "error" },
+			"style": {
+				"noNamespace": "error",
+				"useAsConstAssertion": "error",
+				"useSelfClosingElements": "off"
+			},
 			"complexity": {
 				"noUselessThisAlias": "error",
 				"noUselessTypeConstraint": "error"

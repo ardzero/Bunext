@@ -70,10 +70,9 @@ npm run prepare
 - [ ] add sample responsive nav
 - [ ] add sample footer
 - [ ] add sample server actions
-- [ ] add a branch with animation features
-- [ ] add a branch with drizzle orm
-- [ ] add simple hero template
-
+- [ ] add syntax highlighting for code blocks
+- [ ] add a branch with animation features using motion
+- [ ] add a feature full branch with drizzle orm, analytics, auth
 
 <!-- ### [Conventions](./CONVENTION.md) -->
 <!-- ## License

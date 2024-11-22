@@ -95,42 +95,6 @@ export default function Home() {
 
 	return (
 		<div className="min-h-screen bg-background text-foreground">
-			<header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-				<div className="container flex h-14 items-center justify-between">
-					<div className="flex items-center gap-6">
-						<Link className="flex items-center space-x-2" href="/">
-							<AppWindow className="h-6 w-6" />
-							<span className="hidden font-bold sm:inline-block">
-								Next.js 15 Bun Starter
-							</span>
-						</Link>
-						<div className="flex items-center gap-2">
-							<Button variant="outline" size="sm" asChild>
-								<a
-									href="https://github.com/DarkidOP/Bunext"
-									target="_blank"
-									rel="noopener noreferrer"
-									className="flex items-center gap-2"
-								>
-									<Github className="h-4 w-4" />
-									<span className="hidden sm:inline">View on GitHub</span>
-								</a>
-							</Button>
-							<Button size="sm" asChild>
-								<a
-									href="https://github.com/DarkidOP/Bunext/generate"
-									target="_blank"
-									rel="noopener noreferrer"
-									className="flex items-center gap-2"
-								>
-									<Rocket className="h-4 w-4" />
-									<span className="hidden sm:inline">Use Template</span>
-								</a>
-							</Button>
-						</div>
-					</div>
-				</div>
-			</header>
 			<main className="container mx-auto px-4 py-8">
 				<section className="mb-12 text-center">
 					<h1 className="mb-4 font-clash font-medium text-4xl tracking-tight lg:text-5xl">
@@ -165,8 +129,8 @@ export default function Home() {
 				</section>
 			</main>
 			<footer className="border-t">
-				<div className="container flex h-14 items-center">
-					<p className="text-muted-foreground text-sm">
+				<div className="container flex h-14 items-center justify-start px-0">
+					<p className="text-muted-foreground text-sm ">
 						© 2024{" "}
 						<Link
 							href="https://github.com/DarkidOP"
