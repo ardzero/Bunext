@@ -34,6 +34,8 @@ export function MainNav() {
 									? "text-foreground"
 									: "text-foreground/70",
 						)}
+						target={link.external ? "_blank" : ""}
+						rel={link.external ? "noreferrer" : ""}
 					>
 						{link.label}
 					</Link>

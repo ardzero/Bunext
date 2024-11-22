@@ -68,6 +68,7 @@ export function MobileNav() {
 										<MobileLink
 											key={item.href}
 											href={item.href}
+											target={item.external ? "_blank" : ""}
 											onOpenChange={setOpen}
 										>
 											{item.label}
@@ -90,6 +91,7 @@ interface MobileLinkProps extends LinkProps {
 	onOpenChange?: (open: boolean) => void;
 	children: React.ReactNode;
 	className?: string;
+	target?: string;
 }
 
 function MobileLink({
@@ -97,6 +99,7 @@ function MobileLink({
 	onOpenChange,
 	className,
 	children,
+	target,
 	...props
 }: MobileLinkProps) {
 	const router = useRouter();
@@ -108,6 +111,7 @@ function MobileLink({
 				onOpenChange?.(false);
 			}}
 			className={cn("text-lg", className)}
+			target={target}
 			{...props}
 		>
 			{children}
