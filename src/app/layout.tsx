@@ -10,9 +10,10 @@ export const viewport: Viewport = viewportData;
 import { RootProvider } from "@/components/Providers/root-provider";
 import { FeatureFlag } from "@/components/utils/featureFlag";
 
-import { SiteHeader } from "@/components/navigation/site-header";
 // components
 import { ModeSelector } from "@/components/ui/themeSelector";
+import { SiteHeader } from "@/components/navigation/site-header";
+import { SimpleFooter } from "@/components/navigation/footer";
 import { cn } from "@/lib/utils";
 
 export default function RootLayout({
@@ -29,10 +30,11 @@ export default function RootLayout({
 				)}
 			>
 				<RootProvider>
-					<div data-wrapper="" className="border-border/40 dark:border-border">
-						<div className="mx-auto w-full border-border/40 min-[1800px]:max-w-[1536px] min-[1800px]:border-x dark:border-border">
+					<div data-wrapper="" className="border-border/40 dark:border-border ">
+						<div className="mx-auto w-full border-border/40 min-[1800px]:max-w-[1536px] min-[1800px]:border-x dark:border-border min-h-screen flex flex-col">
 							<SiteHeader />
 							<main className="flex-1">{children}</main>
+							<SimpleFooter className="mt-auto" />
 						</div>
 					</div>
 					<FeatureFlag featureFlag={["NEXT_THEME", "THEME_BUTTON"]}>

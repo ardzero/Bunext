@@ -94,54 +94,38 @@ export default function Home() {
 	];
 
 	return (
-		<div className="min-h-screen bg-background text-foreground">
-			<main className="container mx-auto px-4 py-8">
-				<section className="mb-12 text-center">
-					<h1 className="mb-4 font-clash font-medium text-4xl tracking-tight lg:text-5xl">
-						Next.js 15 Bun Starter Template
-					</h1>
-					<p className="mx-auto mb-8 max-w-2xl text-muted-foreground text-xl">
-						Jumpstart your Next.js projects with this feature-packed starter
-						template. Built with performance, accessibility, and developer
-						experience in mind.
-					</p>
-					<Button size="sm" asChild>
-						<TransitionLink href="/pagetr" className="flex items-center gap-2">
-							<ArrowRightLeft className="h-4 w-4" />
-							<span className="hidden sm:inline">Page Transition</span>
-						</TransitionLink>
-					</Button>
-				</section>
-				<section className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-					{features.map((feature, index) => (
-						<Card key={index}>
-							<CardHeader>
-								<CardTitle className="flex items-center gap-2">
-									<feature.icon className="h-8 w-8" />
-									{feature.title}
-								</CardTitle>
-							</CardHeader>
-							<CardContent>
-								<CardDescription>{feature.description}</CardDescription>
-							</CardContent>
-						</Card>
-					))}
-				</section>
-			</main>
-			<footer className="border-t">
-				<div className="container flex h-14 items-center justify-start px-0">
-					<p className="text-muted-foreground text-sm ">
-						© 2024{" "}
-						<Link
-							href="https://github.com/DarkidOP"
-							className="hover:underline"
-						>
-							Farhan Ashhab Nur (@darkiop)
-						</Link>
-						.
-					</p>
-				</div>
-			</footer>
+		<div className="container mx-auto px-4 py-8">
+			<section className="mb-12 text-center">
+				<h1 className="mb-4 font-clash font-medium text-4xl tracking-tight lg:text-5xl">
+					Next.js 15 Bun Starter Template
+				</h1>
+				<p className="mx-auto mb-8 max-w-2xl text-muted-foreground text-xl">
+					Jumpstart your Next.js projects with this feature-packed starter
+					template. Built with performance, accessibility, and developer
+					experience in mind.
+				</p>
+				<Button size="sm" asChild>
+					<TransitionLink href="/pagetr" className="flex items-center gap-2">
+						<ArrowRightLeft className="h-4 w-4" />
+						<span className="hidden sm:inline">Page Transition</span>
+					</TransitionLink>
+				</Button>
+			</section>
+			<section className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+				{features.map((feature, index) => (
+					<Card key={index}>
+						<CardHeader>
+							<CardTitle className="flex items-center gap-2">
+								<feature.icon className="h-8 w-8" />
+								{feature.title}
+							</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<CardDescription>{feature.description}</CardDescription>
+						</CardContent>
+					</Card>
+				))}
+			</section>
 		</div>
 	);
 }

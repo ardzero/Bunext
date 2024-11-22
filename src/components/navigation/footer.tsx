@@ -1,8 +1,14 @@
 import { footerData, simpleFooterData } from "@/lib/data/footer-data";
-export function simpleFooter() {
+import { cn } from "@/lib/utils";
+export function SimpleFooter({ className }: { className?: string }) {
 	return (
-		<footer className="border-border/40 border-t py-6 md:px-8 md:py-0 dark:border-border">
-			<div className="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
+		<footer
+			className={cn(
+				"border-border/40 border-t py-6 md:px-8 md:py-0 dark:border-border max-h-24",
+				className,
+			)}
+		>
+			<div className="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row md:px-0">
 				<p className="text-balance text-center text-muted-foreground text-sm leading-loose md:text-left">
 					{simpleFooterData?.texts.map((item, index) => (
 						<>
@@ -12,7 +18,7 @@ export function simpleFooter() {
 								href={item.url}
 								target="_blank"
 								rel="noreferrer"
-								className="font-medium underline underline-offset-4"
+								className="font-medium hover:underline underline-offset-4"
 							>
 								{item.label}
 							</a>
