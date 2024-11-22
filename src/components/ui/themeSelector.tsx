@@ -55,70 +55,65 @@ export function ModeDropdown({ className }: { className?: string }) {
 }
 
 export function ModeSelector({ className }: { className?: string }) {
-	const { setTheme } = useTheme();
+	const { theme, setTheme } = useTheme();
 	return (
-		<>
-			<TooltipProvider>
-				<RadioGroup
-					defaultValue="system"
-					className={cn(
-						"flex gap-0 rounded-3xl border bg-background/65 backdrop-blur-2xl",
-						className,
-					)}
-				>
-					<Tooltip>
-						<TooltipTrigger asChild>
-							<Label
-								htmlFor="light"
-								className="flex flex-col items-center justify-between rounded-full bg-popover p-2 hover:bg-accent hover:text-accent-foreground [&:has([data-state=checked])]:bg-accent"
-								onClick={() => setTheme("light")}
-							>
-								<RadioGroupItem value="light" id="light" className="sr-only" />
-								<Sun className="h-4 w-4 " />
-							</Label>
-						</TooltipTrigger>
-						<TooltipContent side="bottom">
-							<p>Light</p>
-						</TooltipContent>
-					</Tooltip>
+		<TooltipProvider>
+			<RadioGroup
+				value={theme}
+				defaultValue="system"
+				className={cn(
+					"flex gap-0 rounded-3xl border bg-background/65 backdrop-blur-2xl",
+					className,
+				)}
+			>
+				<Tooltip>
+					<TooltipTrigger asChild>
+						<Label
+							htmlFor="light"
+							className="flex flex-col items-center justify-between rounded-full bg-popover p-2 hover:bg-accent hover:text-accent-foreground [&:has([data-state=checked])]:bg-accent"
+							onClick={() => setTheme("light")}
+						>
+							<RadioGroupItem value="light" id="light" className="sr-only" />
+							<Sun className="h-4 w-4 " />
+						</Label>
+					</TooltipTrigger>
+					<TooltipContent side="bottom">
+						<p>Light</p>
+					</TooltipContent>
+				</Tooltip>
 
-					<Tooltip>
-						<TooltipTrigger asChild>
-							<Label
-								htmlFor="dark"
-								className="flex flex-col items-center justify-between rounded-full bg-popover p-2 hover:bg-accent hover:text-accent-foreground [&:has([data-state=checked])]:bg-accent"
-								onClick={() => setTheme("dark")}
-							>
-								<RadioGroupItem value="dark" id="dark" className="sr-only" />
-								<Moon className="h-4 w-4" />
-							</Label>
-						</TooltipTrigger>
-						<TooltipContent side="bottom">
-							<p>Dark</p>
-						</TooltipContent>
-					</Tooltip>
+				<Tooltip>
+					<TooltipTrigger asChild>
+						<Label
+							htmlFor="dark"
+							className="flex flex-col items-center justify-between rounded-full bg-popover p-2 hover:bg-accent hover:text-accent-foreground [&:has([data-state=checked])]:bg-accent"
+							onClick={() => setTheme("dark")}
+						>
+							<RadioGroupItem value="dark" id="dark" className="sr-only" />
+							<Moon className="h-4 w-4" />
+						</Label>
+					</TooltipTrigger>
+					<TooltipContent side="bottom">
+						<p>Dark</p>
+					</TooltipContent>
+				</Tooltip>
 
-					<Tooltip>
-						<TooltipTrigger asChild>
-							<Label
-								htmlFor="system"
-								className="flex flex-col items-center justify-between rounded-full bg-popover p-2 hover:bg-accent hover:text-accent-foreground [&:has([data-state=checked])]:bg-accent"
-								onClick={() => setTheme("system")}
-							>
-								<RadioGroupItem
-									value="system"
-									id="system"
-									className="sr-only"
-								/>
-								<LaptopIcon className="h-4 w-4" />
-							</Label>
-						</TooltipTrigger>
-						<TooltipContent side="bottom">
-							<p>System</p>
-						</TooltipContent>
-					</Tooltip>
-				</RadioGroup>
-			</TooltipProvider>
-		</>
+				<Tooltip>
+					<TooltipTrigger asChild>
+						<Label
+							htmlFor="system"
+							className="flex flex-col items-center justify-between rounded-full bg-popover p-2 hover:bg-accent hover:text-accent-foreground [&:has([data-state=checked])]:bg-accent"
+							onClick={() => setTheme("system")}
+						>
+							<RadioGroupItem value="system" id="system" className="sr-only" />
+							<LaptopIcon className="h-4 w-4" />
+						</Label>
+					</TooltipTrigger>
+					<TooltipContent side="bottom">
+						<p>System</p>
+					</TooltipContent>
+				</Tooltip>
+			</RadioGroup>
+		</TooltipProvider>
 	);
 }
