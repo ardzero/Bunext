@@ -1,4 +1,4 @@
-import { footerData, simpleFooterData } from "@/lib/data/footer-data";
+import { simpleFooterData } from "@/lib/data/footer-data";
 import { cn } from "@/lib/utils";
 export function SimpleFooter({ className }: { className?: string }) {
 	return (
