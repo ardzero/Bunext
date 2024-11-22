@@ -44,12 +44,13 @@ npm run prepare
 - Tailwind CSS
 - [Shadcn](https://ui.shadcn.com/) components
 - CustomFont Optimization using [Next font](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts)
-- Next theme provider (dark and light mode)
-- [zod](https://zod.dev/) validation
-- Feature flags
-- Metadata generator for SEO (including apple-touch-icon)
-- Per Link page transition (without any library)
 - Icons using [lucide-react](https://lucide.dev/)
+- Next theme provider (dark and light mode)
+- Metadata generator for SEO (including apple-touch-icon)
+- Feature flags
+-  [zod](https://zod.dev/) validation
+- Per Link page transition (without any library)
+- [Fluid Tailwind](https://fluid.tw/) for easier responsive design (can be disabled in `featureflags.ts`)
 - [Biome](https://biomejs.dev/) for linting and formatting
 - Utilities like `qrCode gen, string shortner, uniqueCode gen, img placeholder, email validation, hashing etc`
 
@@ -67,7 +68,7 @@ npm run prepare
 
 - [x] add next themes
 - [x] feature flags
-- [ ] add sample responsive nav
+- [x] add sample responsive nav
 - [ ] add sample footer
 - [ ] add sample server actions
 - [ ] add syntax highlighting for code blocks
