@@ -4,7 +4,7 @@ A Next.js 15 app with Tailwind CSS template. [Live deployment](https://bunextt.v
 
 ## Usage (run locally)
 
-> required `bun` or `nodejs` installed
+> required `bun` or `nodejs` installed and make sure they're up to date
 
 Go to the `root` folder where `package.json` exists.
 
