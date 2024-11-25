@@ -1,4 +1,19 @@
 import type { LucideIcon } from "lucide-react";
+import type { ImageProps } from 'next/image';
+import type * as React from 'react';
+
+
+type OmittedImageProps = 'height' | 'width' | 'srcSet' | 'placeholder' | 'alt';
+type ModifiedImageProps = Partial<{
+    alt: string;
+    width: number;
+    height: number;
+    placeholder: 'blur' | 'color' | 'shimmer' | 'empty' | `data:image/${string}`;
+}>;
+export type ImgProps = ModifiedImageProps &
+    Omit<ImageProps, OmittedImageProps> &
+    Omit<React.ImgHTMLAttributes<HTMLImageElement>, OmittedImageProps>;
+
 
 export type TLink = {
     label: string;
@@ -6,16 +21,22 @@ export type TLink = {
     Icon?: LucideIcon | React.ComponentType<React.HTMLAttributes<SVGElement>>;
     external?: boolean;
 };
-export type TnavData = {
-    title: string;
-    links: TLink[];
-    iconButtons: TLink[];
-};
+
 export type Author = {
     name: string;
     url: string;
 };
-
+export type TImage = {
+    src: string;
+    alt: string;
+};
+// nav data
+export type TnavData = {
+    logo: TImage;
+    title: string;
+    links: TLink[];
+    iconButtons: TLink[];
+};
 type TSimpleFooterText = {
     pretext: string;
     label: string;
@@ -56,4 +77,3 @@ export type TMetadataIcons = {
     shortcut: string;
     apple: string;
 };
-

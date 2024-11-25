@@ -165,3 +165,24 @@ export const shimmer = (w: number | `${number}`, h: number | `${number}`) => {
   <animate xlink:href="#r" attributeName="x" from="-${w}" to="${w}" dur="1s" repeatCount="indefinite"  />
 </svg>`;
 };
+
+
+export function cleanSrc(src: string): string {
+	if (src.includes('/public/'))
+		return src.replace('/public/', '/');
+	return src;
+}
+
+
+export const encodeBase64 = (str: string): string => {
+	return encodeURIComponent(Buffer.from(str).toString('base64'));
+};
+
+export const decodeBase64 = (encodedStr: string): string => {
+	try {
+		return Buffer.from(decodeURIComponent(encodedStr), 'base64').toString('utf-8');
+	} catch (error) {
+		console.error('Error decoding base64 string:', error);
+		return '';
+	}
+};
