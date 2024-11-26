@@ -1,20 +1,21 @@
-import { siteMetaData, viewportData } from "@/lib/config/siteConfig";
-import { fonts } from "@/styles/tailwind/fonts";
 import type { Metadata, Viewport } from "next";
-import "@/styles/globals.css";
-import "@/styles/customGlobal.css";
-
+import { siteMetaData, viewportData } from "@/lib/config/siteConfig";
+// metadata
 export const metadata: Metadata = siteMetaData;
 export const viewport: Viewport = viewportData;
-
-import { RootProvider } from "@/components/Providers/root-provider";
-import { FeatureFlag } from "@/components/utils/featureFlag";
-
-import { SimpleFooter } from "@/components/navigation/footer";
-import { SiteHeader } from "@/components/navigation/site-header";
-// components
-import { ModeSelector } from "@/components/ui/themeSelector";
+// css
+import "@/styles/globals.css";
+import "@/styles/customGlobal.css";
+// utilities
 import { cn } from "@/lib/utils";
+import { fonts } from "@/styles/tailwind/fonts";
+// providers
+import { RootProvider } from "@/components/Providers/root-provider";
+// components
+import { SiteHeader } from "@/components/navigation/site-header";
+import { FeatureFlag } from "@/components/utils/featureFlag";
+import { ModeSelector } from "@/components/ui/themeSelector";
+import { SimpleFooter } from "@/components/navigation/footer";
 
 export default function RootLayout({
 	children,
@@ -32,6 +33,7 @@ export default function RootLayout({
 							<SimpleFooter className="mt-auto" />
 						</div>
 					</div>
+					{/* checks if theme and theme button feature flags are enabled */}
 					<FeatureFlag featureFlag={["NEXT_THEME", "THEME_BUTTON"]}>
 						<ModeSelector className="fixed right-2 bottom-2 z-[60] " />
 					</FeatureFlag>

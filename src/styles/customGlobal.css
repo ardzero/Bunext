@@ -1,3 +1,5 @@
+
+/* responsive font sizes | comment this out if you wanna use defaults */
 :root {
 	font-size: 15px;
 }
@@ -14,7 +16,7 @@
 	}
 }
 
-/* page transition */
+/* page transition css start */
 .page-transition-easing {
 	transition-property: opacity, transform, filter, background;
 	transition-timing-function: ease-in-out;
@@ -33,6 +35,7 @@
 	transform: translateY(40px);
 	filter: blur(12px);
 }
+/* page transition css end */
 
 /* fix layout shift of select box */
 html > body[style] {
@@ -136,5 +139,4 @@ input {
 		hsl(var(--background) / 0) 0%,
 		hsl(var(--background) / 1) 100%
 	);
-	/* background: red; */
 }
