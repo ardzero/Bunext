@@ -3,8 +3,10 @@ import Link from "next/link";
 import { MainNav } from "@/components/navigation/main-nav";
 import { MobileNav } from "@/components/navigation/mobile-nav";
 import { Button } from "@/components/ui/button";
+import { ShareModal } from "@/components/utils/shareModal";
 import { navData } from "@/lib/data/nav-data";
-import { Rocket } from "lucide-react";
+import { Rocket, Share2 } from "lucide-react";
+import { remoteUrl } from "@/lib/config/siteConfig";
 
 export function SiteHeader() {
 	return (
@@ -17,6 +19,12 @@ export function SiteHeader() {
 						<Search />
 					</div> */}
 					<nav className="flex items-center gap-0.5">
+						<ShareModal shareUrl={remoteUrl}>
+							<Button variant="ghost" size="icon" className="h-8 w-8 px-0">
+								<Share2 className="h-4 w-4" />
+								<span className="sr-only">Share</span>
+							</Button>
+						</ShareModal>
 						{navData?.iconButtons.map((social) => {
 							const Icon = social.Icon;
 							return (

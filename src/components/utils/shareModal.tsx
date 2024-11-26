@@ -1,5 +1,5 @@
 "use client";
-// import Image from "next/image";
+import Image from "next/image";
 import { Copy } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { getQrCode } from "@/lib/utils";
@@ -14,16 +14,16 @@ import {
 import { Input } from "@/components/ui/input";
 import { toast } from "@/hooks/use-toast";
 import { Icons } from "@/components/utils/icons";
-import { Img } from "@/components/utils/image";
+// import { Img } from "@/components/utils/image";
 
-type ShareDrawerProps = React.ComponentProps<typeof Drawer> & {
+type ShareModalProps = React.ComponentProps<typeof Drawer> & {
 	shareUrl: string;
 	sharetoWindow?: boolean;
 	twText?: string;
 	qrIcon?: React.ReactNode;
 	title?: string;
 };
-export default function ShareDrawer({
+export function ShareModal({
 	children,
 	shareUrl,
 	sharetoWindow,
@@ -31,7 +31,7 @@ export default function ShareDrawer({
 	qrIcon,
 	title = "Share with friends",
 	...props
-}: ShareDrawerProps) {
+}: ShareModalProps) {
 	const copyToClipboard = async () => {
 		try {
 			await navigator.clipboard.writeText(shareUrl);
@@ -134,12 +134,14 @@ export default function ShareDrawer({
 							{qrIcon ? (
 								<div className="size-64 md:size-52 ">{qrIcon}</div>
 							) : (
-								<Img
+								<Image
 									src={getQrCode(shareUrl)}
 									alt="a2e-qr"
 									width={100}
 									height={100}
 									className="size-64 md:size-52 rounded-lg dark:invert"
+									placeholder="blur"
+									blurDataURL="data:image/webp;base64,UklGRhoDAABXRUJQVlA4WAoAAAAgAAAAiAAAiAAASUNDUMgBAAAAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADZWUDggLAEAALAPAJ0BKokAiQA+3VihTb+yqqM0+a6L8BuJaW7f/O9jQqaYaAhVSWra4/GhFDmIKVzTnJDNV4W3lDo9y2L38gGk49KKvOloYVxf6ijAYpcSw+X55yIgCBEjybqnM+qlV2CZQq1SIsg/sij/ZBK5z/xfN7lq113UVbZfA0X+2Pto6W9caIxAAP7xcJZFS/J+l4fZ6LKjJJRMH8rhCfKXMbgrWA4L9S2N23IfzmJNl/A6G1cZTF8yYz97Ng/xexFNupwMQGxtAtMeOvEENZFX3YGFEckDL6/lvqHNDeO+qylxUZOX2jsV9OML1rXMLVJRycOZVb6feSW2KXeH5D9WMHIQZPSlDt72MNz4W8wMxCf5PvbJMTVdra4P4awXNccGFONBetplS62ib1AAAA=="
 								/>
 							)}
 						</div>
