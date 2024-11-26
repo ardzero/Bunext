@@ -56,7 +56,7 @@ export function SiteHeader({ className }: { className?: string }) {
 								className="flex items-center gap-2"
 							>
 								<Rocket className="size-5" />
-								<span className="hidden sm:inline">Use Template</span>
+								<span className="sr-only sm:not-sr-only">Use Template</span>
 							</a>
 						</Button>
 					</nav>

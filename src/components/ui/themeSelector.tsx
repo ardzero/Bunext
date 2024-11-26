@@ -73,7 +73,12 @@ export function ModeSelector({ className }: { className?: string }) {
 							className="flex flex-col items-center justify-between rounded-full bg-popover p-2 hover:bg-accent hover:text-accent-foreground [&:has([data-state=checked])]:bg-accent"
 							onClick={() => setTheme("light")}
 						>
-							<RadioGroupItem value="light" id="light" className="sr-only" />
+							<RadioGroupItem
+								value="light"
+								id="light"
+								className="sr-only"
+								aria-label="light theme"
+							/>
 							<Sun className="h-4 w-4 " />
 						</Label>
 					</TooltipTrigger>
@@ -89,7 +94,12 @@ export function ModeSelector({ className }: { className?: string }) {
 							className="flex flex-col items-center justify-between rounded-full bg-popover p-2 hover:bg-accent hover:text-accent-foreground [&:has([data-state=checked])]:bg-accent"
 							onClick={() => setTheme("dark")}
 						>
-							<RadioGroupItem value="dark" id="dark" className="sr-only" />
+							<RadioGroupItem
+								value="dark"
+								id="dark"
+								className="sr-only"
+								aria-label="dark theme"
+							/>
 							<Moon className="h-4 w-4" />
 						</Label>
 					</TooltipTrigger>
@@ -105,7 +115,12 @@ export function ModeSelector({ className }: { className?: string }) {
 							className="flex flex-col items-center justify-between rounded-full bg-popover p-2 hover:bg-accent hover:text-accent-foreground [&:has([data-state=checked])]:bg-accent"
 							onClick={() => setTheme("system")}
 						>
-							<RadioGroupItem value="system" id="system" className="sr-only" />
+							<RadioGroupItem
+								value="system"
+								id="system"
+								className="sr-only"
+								aria-label="system theme"
+							/>
 							<LaptopIcon className="h-4 w-4" />
 						</Label>
 					</TooltipTrigger>

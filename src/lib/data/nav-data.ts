@@ -7,7 +7,7 @@ export const navData: TnavData = {
 	showTitle: true,
 	logo: {
 		src: "/logo.svg",
-		alt: siteData.shortName,
+		alt: "logo",
 	},
 	links: [
 		{
