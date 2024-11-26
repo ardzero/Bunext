@@ -51,10 +51,9 @@ export function ShareModal({
 	};
 
 	const shareToSocial = (platform: string) => {
+		let url = "";
 		const encodedUrl = encodeURIComponent(shareUrl);
 		const twitterText = twText ? encodeURIComponent(twText) : "";
-		let url = "";
-		let appUrl = "";
 
 		switch (platform) {
 			case "facebook":
@@ -62,54 +61,26 @@ export function ShareModal({
 				break;
 
 			case "twitter":
-				// Twitter/X mobile app URL scheme
-				appUrl = `twitter://post?text=${twitterText}&url=${encodedUrl}`;
-				// Fallback web URL
 				url = `https://twitter.com/intent/tweet?text=${twitterText}&url=${encodedUrl}`;
 				break;
-
 			case "linkedin":
-				// LinkedIn mobile app URL scheme
-				appUrl = `linkedin://shareArticle?mini=true&url=${encodedUrl}`;
-				// Fallback web URL
 				url = `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`;
 				break;
 		}
 
-		if (appUrl && (platform === "twitter" || platform === "linkedin")) {
-			// Try opening the app first
-			window.location.href = appUrl;
+		// Open in a new window with specific dimensions
+		const width = 600;
+		const height = 400;
+		const left = window.innerWidth / 2 - width / 2;
+		const top = window.innerHeight / 2 - height / 2;
 
-			// Fallback to web after a short delay if app doesn't open
-			setTimeout(() => {
-				const width = 600;
-				const height = 400;
-				const left = window.innerWidth / 2 - width / 2;
-				const top = window.innerHeight / 2 - height / 2;
-
-				window.open(
-					url,
-					"_blank",
-					sharetoWindow
-						? `toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=${width}, height=${height}, top=${top}, left=${left}`
-						: undefined,
-				);
-			}, 500);
-		} else {
-			// For Facebook or desktop, just open in browser
-			const width = 600;
-			const height = 400;
-			const left = window.innerWidth / 2 - width / 2;
-			const top = window.innerHeight / 2 - height / 2;
-
-			window.open(
-				url,
-				"_blank",
-				sharetoWindow
-					? `toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=${width}, height=${height}, top=${top}, left=${left}`
-					: undefined,
-			);
-		}
+		window.open(
+			url,
+			"_blank",
+			sharetoWindow
+				? `toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=${width}, height=${height}, top=${top}, left=${left}`
+				: undefined,
+		);
 	};
 
 	const iconClassName = "size-6 md:size-5 fill-foreground";
