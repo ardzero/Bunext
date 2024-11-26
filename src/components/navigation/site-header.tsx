@@ -3,7 +3,7 @@ import Link from "next/link";
 import { MainNav } from "@/components/navigation/main-nav";
 import { MobileNav } from "@/components/navigation/mobile-nav";
 import { Button } from "@/components/ui/button";
-import { ShareModal } from "@/components/utils/shareModal";
+import { ShareModal } from "@/components/utils/share-modal";
 import { navData } from "@/lib/data/nav-data";
 import { Rocket, Share2 } from "lucide-react";
 import { remoteUrl } from "@/lib/config/siteConfig";
