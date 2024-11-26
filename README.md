@@ -35,7 +35,7 @@ npm run dev
 - Next.js 15 App Directory
 - Tailwind CSS
 - [Shadcn](https://ui.shadcn.com/) components
-- Custom utils like `share modal, image, icons, etc`
+- Custom utils like `share modal, multi-select(no library), image, icons, etc`
 - CustomFont Optimization using [Next font](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts)
 - Icons using [lucide-react](https://lucide.dev/)
 - Next theme provider (dark and light mode)
@@ -68,6 +68,48 @@ npm run dev
 - [ ] add a branch with animation features using motion
 - [ ] add a feature full branch with drizzle orm, analytics, auth
 
+
+### Multi-select sample code
+```tsx
+"use client";
+import React, { useState } from "react";
+import { MultiSelect } from "@/components/ui/multi-select";
+
+const catsList = [
+  { value: "persian", label: "Persian Cat" },
+  { value: "siamese", label: "Siamese Cat" },
+  { value: "maine-coon", label: "Maine Coon" },
+  { value: "ragdoll", label: "Ragdoll" },
+  { value: "bengal", label: "Bengal Cat" },
+];
+
+function Home() {
+  const [selectedCats, setSelectedCats] = useState<string[]>(["persian", "siamese"]);
+
+  return (
+    <div className="p-4 max-w-xl">
+      <h1 className="text-2xl font-bold mb-4">Multi-Select Component</h1>
+      <MultiSelect
+        options={catsList}
+        onValueChange={setSelectedCats}
+        defaultValue={selectedCats}
+        placeholder="Select cats"
+        variant="inverted"
+        animation={2}
+        maxCount={3}
+      />
+      <div className="mt-4">
+        <h2 className="text-xl font-semibold">Selected Cats:</h2>
+        <ul className="list-disc list-inside">
+          {selectedCats.map((cat) => (
+            <li key={cat}>{cat}</li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+}
+```
 <!-- ### [Conventions](./CONVENTION.md) -->
 <!-- ## License
 Licensed under the [MIT license](./LICENSE). -->
