@@ -32,7 +32,8 @@ export type TImage = {
 };
 // nav data
 export type TnavData = {
-    logo: TImage;
+    logo?: TImage;
+    showTitle: boolean;
     title: string;
     links: TLink[];
     iconButtons: TLink[];

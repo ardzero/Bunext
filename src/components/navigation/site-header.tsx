@@ -7,11 +7,17 @@ import { ShareModal } from "@/components/utils/shareModal";
 import { navData } from "@/lib/data/nav-data";
 import { Rocket, Share2 } from "lucide-react";
 import { remoteUrl } from "@/lib/config/siteConfig";
+import { cn } from "@/lib/utils";
 
-export function SiteHeader() {
+export function SiteHeader({ className }: { className?: string }) {
 	return (
-		<header className="sticky top-0 z-50 w-full border-border/40 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 dark:border-border">
-			<div className="flex h-14 items-center px-4">
+		<header
+			className={cn(
+				"sticky top-0 z-50 w-full border-border/40 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 dark:border-border",
+				className,
+			)}
+		>
+			<div className="flex h-16 items-center px-4">
 				<MainNav />
 				<MobileNav />
 				<div className="flex flex-1 items-center justify-end gap-2">
@@ -20,8 +26,8 @@ export function SiteHeader() {
 					</div> */}
 					<nav className="flex items-center gap-0.5">
 						<ShareModal shareUrl={remoteUrl}>
-							<Button variant="ghost" size="icon" className="h-8 w-8 px-0">
-								<Share2 className="h-4 w-4" />
+							<Button variant="ghost" size="icon" className="size-10 px-0">
+								<Share2 className="size-5" />
 								<span className="sr-only">Share</span>
 							</Button>
 						</ShareModal>
@@ -32,24 +38,24 @@ export function SiteHeader() {
 									key={social.href}
 									variant="ghost"
 									size="icon"
-									className="h-8 w-8 px-0"
+									className="size-10 px-0"
 									asChild
 								>
 									<Link href={social.href} target="_blank" rel="noreferrer">
-										{Icon && <Icon className="h-4 w-4" />}
+										{Icon && <Icon className="size-5" />}
 										<span className="sr-only">{social.label}</span>
 									</Link>
 								</Button>
 							);
 						})}
-						<Button size="sm" variant="outline" className="h-8 " asChild>
+						<Button size="sm" variant="outline" className="h-10" asChild>
 							<a
 								href="https://github.com/DarkidOP/Bunext/generate"
 								target="_blank"
 								rel="noopener noreferrer"
 								className="flex items-center gap-2"
 							>
-								<Rocket className="h-4 w-4" />
+								<Rocket className="size-5" />
 								<span className="hidden sm:inline">Use Template</span>
 							</a>
 						</Button>

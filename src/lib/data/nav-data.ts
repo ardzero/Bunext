@@ -4,6 +4,11 @@ import { siteData } from "@/lib/data/siteData";
 
 export const navData: TnavData = {
 	title: siteData.shortName,
+	showTitle: true,
+	logo: {
+		src: "/logo.svg",
+		alt: siteData.shortName,
+	},
 	links: [
 		{
 			label: "Home",

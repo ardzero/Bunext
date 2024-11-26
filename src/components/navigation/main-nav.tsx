@@ -1,12 +1,11 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 import { navData } from "@/lib/data/nav-data";
-import { siteData } from "@/lib/data/siteData";
-import { cn } from "@/lib/utils";
-import { AppWindow } from "lucide-react";
+import { cn, truncateString } from "@/lib/utils";
 
 export function MainNav() {
 	const pathname = usePathname();
@@ -14,9 +13,19 @@ export function MainNav() {
 	return (
 		<div className="mr-4 hidden md:flex">
 			<Link href="/" className="mr-4 flex items-center gap-2 lg:mr-6">
-				<AppWindow className="h-6 w-6" />
-				<span className="hidden font-bold lg:inline-block">
-					{siteData.name}
+				{navData.logo && (
+					<Image
+						src={navData.logo.src}
+						alt={navData.logo.alt}
+						width={36}
+						height={36}
+						className="size-10"
+					/>
+				)}
+				<span
+					className={cn("font-bold text-2xl", !navData.showTitle && "sr-only")}
+				>
+					{truncateString(navData.title, 20)}
 				</span>
 			</Link>
 			<nav className="flex items-center gap-4 font-medium text-sm xl:gap-6">

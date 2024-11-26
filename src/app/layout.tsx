@@ -33,7 +33,7 @@ export default function RootLayout({
 						</div>
 					</div>
 					<FeatureFlag featureFlag={["NEXT_THEME", "THEME_BUTTON"]}>
-						<ModeSelector className="fixed right-2 bottom-2 z-[1005] " />
+						<ModeSelector className="fixed right-2 bottom-2 z-[60] " />
 					</FeatureFlag>
 				</RootProvider>
 			</body>

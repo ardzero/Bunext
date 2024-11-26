@@ -5,13 +5,18 @@ import { useRouter } from "next/navigation";
 import * as React from "react";
 
 import { Button } from "@/components/ui/button";
-import { Drawer, DrawerContent, DrawerTrigger } from "@/components/ui/drawer";
+import {
+	Drawer,
+	DrawerContent,
+	DrawerTitle,
+	DrawerHeader,
+	DrawerTrigger,
+} from "@/components/ui/drawer";
 import { useMetaColor } from "@/hooks/use-meta-color";
-import { cn } from "@/lib/utils";
+import { cn, truncateString } from "@/lib/utils";
 
 import { navData } from "@/lib/data/nav-data";
-import { siteData } from "@/lib/data/siteData";
-import { AppWindow } from "lucide-react";
+import Image from "next/image";
 export function MobileNav() {
 	const [open, setOpen] = React.useState(false);
 	const { setMetaColor, metaColor } = useMetaColor();
@@ -35,7 +40,7 @@ export function MobileNav() {
 	}, [open, setMetaColor, metaColor]);
 
 	return (
-		<div className="flex md:hidden">
+		<div className="flex md:hidden justify-between  items-center">
 			<Drawer open={open} onOpenChange={onOpenChange}>
 				<DrawerTrigger asChild>
 					<Button
@@ -60,6 +65,10 @@ export function MobileNav() {
 					</Button>
 				</DrawerTrigger>
 				<DrawerContent className="max-h-[60svh] p-0">
+					<DrawerTitle className="px-5 text-2xl opacity-35">
+						{navData.title}
+					</DrawerTitle>
+
 					<div className="overflow-auto p-6">
 						<div className="flex flex-col space-y-3">
 							{navData?.links?.map(
@@ -80,8 +89,20 @@ export function MobileNav() {
 				</DrawerContent>
 			</Drawer>
 			<Link href="/" className="mr-4 flex items-center gap-2 lg:mr-6">
-				<AppWindow className="h-6 w-6" />
-				<span className=" font-bold lg:inline-block">{siteData.name}</span>
+				{navData.logo && (
+					<Image
+						src={navData.logo.src}
+						alt={navData.logo.alt}
+						width={36}
+						height={36}
+						className="size-12"
+					/>
+				)}
+				<span
+					className={cn("font-bold text-2xl", !navData.showTitle && "sr-only")}
+				>
+					{truncateString(navData.title, 20)}
+				</span>
 			</Link>
 		</div>
 	);
