@@ -37,7 +37,7 @@ const multiSelectVariants = cva(
 		variants: {
 			variant: {
 				default:
-					" bg-secondary/40 text-foreground hover:bg-secondary/45  px-2 py-1 font-medium backdrop-blur-2xl",
+					" bg-secondary/40 text-foreground  hover:bg-secondary/45  px-2 py-1 font-medium ",
 				secondary:
 					"border-foreground/10 bg-secondary text-secondary-foreground hover:bg-secondary/80",
 				destructive:
@@ -214,6 +214,7 @@ export const MultiSelect = React.forwardRef<
 											<Badge
 												key={value}
 												className={cn(
+													"backdrop-blur-2xl",
 													isAnimating ? "animate-bounce" : "",
 													multiSelectVariants({ variant }),
 												)}
@@ -236,7 +237,7 @@ export const MultiSelect = React.forwardRef<
 									{selectedValues.length > maxCount && (
 										<Badge
 											className={cn(
-												"bg-transparent text-foreground border-foreground/1 hover:bg-transparent ",
+												"backdrop-blur-2xl",
 												isAnimating ? "animate-bounce" : "",
 												multiSelectVariants({ variant }),
 											)}
@@ -244,7 +245,7 @@ export const MultiSelect = React.forwardRef<
 										>
 											{`+ ${selectedValues.length - maxCount} more`}
 											<XCircle
-												className="ml-2 h-4 w-4 cursor-pointer"
+												className="ml-2 h-4 w-4 cursor-pointer "
 												onClick={(event) => {
 													event.stopPropagation();
 													clearExtraOptions();
