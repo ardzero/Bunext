@@ -53,7 +53,7 @@ export function truncateString(
 }
 
 // qr code img generator, default size is 250x250px
-export function qrCodeGen(link: string, size?: string): string {
+export function getQrCode(link: string, size?: string): string {
 	const qrValue = link;
 	const qrSize = size || "250";
 	return `https://api.qrserver.com/v1/create-qr-code/?size=${qrSize}x${qrSize}&data=${qrValue}`;

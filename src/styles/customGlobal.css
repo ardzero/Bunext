@@ -1,16 +1,16 @@
 :root {
-	font-size: 12px;
+	font-size: 13px;
 }
 
 @media (min-width: 1600px) {
 	:root {
-		font-size: 14px;
+		font-size: 16px;
 	}
 }
 
 @media (min-width: 1800px) {
 	:root {
-		font-size: 17px;
+		font-size: 18px;
 	}
 }
 

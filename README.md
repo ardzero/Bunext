@@ -35,6 +35,7 @@ npm run dev
 - Next.js 15 App Directory
 - Tailwind CSS
 - [Shadcn](https://ui.shadcn.com/) components
+- Custom utils like `share modal, image, icons, etc`
 - CustomFont Optimization using [Next font](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts)
 - Icons using [lucide-react](https://lucide.dev/)
 - Next theme provider (dark and light mode)

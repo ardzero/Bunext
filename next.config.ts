@@ -5,6 +5,12 @@ const nextConfig: NextConfig = {
 	eslint: {
 		ignoreDuringBuilds: true,
 	},
+	images: {
+		remotePatterns: [
+			{ protocol: "https", hostname: "api.qrserver.com" },
+			{ protocol: "https", hostname: "v0.dev" },
+		],
+	},
 };
 
 export default nextConfig;
