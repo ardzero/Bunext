@@ -82,7 +82,7 @@ export function ShareModal({
 		);
 	};
 
-	const iconClassName = "size-4 fill-foreground";
+	const iconClassName = "size-6 md:size-5 fill-foreground";
 	return (
 		<Drawer {...props}>
 			<DrawerTrigger asChild>{children}</DrawerTrigger>
