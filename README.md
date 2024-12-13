@@ -39,9 +39,10 @@ npm run dev
 - CustomFont Optimization using [Next font](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts)
 - Icons using [lucide-react](https://lucide.dev/)
 - Next theme provider (dark and light mode)
+- Url stage management using [nuqs](https://nuqs.47ng.com/)
 - Metadata generator for SEO (including apple-touch-icon)
 - Feature flags
--  [zod](https://zod.dev/) validation
+- [zod](https://zod.dev/) validation
 - Per Link page transition (without any library)
 - [Biome](https://biomejs.dev/) for linting and formatting
 - [Fluid Tailwind](https://fluid.tw/) for easier responsive design (disabled by default, to enable go to `tailwind.config.ts` and uncomment the fluid plugin variables, Note: the `min-*` and `max-*` variants don't work while using fluid-tailwind)
@@ -56,7 +57,6 @@ npm run dev
 - advance Metadata config in `src/lib/config/siteConfig.ts`
 - for base styles (scrollbar style, selection highlighting etc) go to `src/styles/tailwind/base.ts`
 
-
 ## Roadmap
 
 - [x] add next themes
@@ -68,8 +68,8 @@ npm run dev
 - [ ] add a branch with animation features using motion
 - [ ] add a feature full branch with drizzle orm, analytics, auth
 
-
 ### Multi-select sample code
+
 ```tsx
 "use client";
 import React, { useState } from "react";
@@ -84,7 +84,10 @@ const catsList = [
 ];
 
 function Home() {
-  const [selectedCats, setSelectedCats] = useState<string[]>(["persian", "siamese"]);
+  const [selectedCats, setSelectedCats] = useState<string[]>([
+    "persian",
+    "siamese",
+  ]);
 
   return (
     <div className="p-4 max-w-xl">
@@ -110,6 +113,7 @@ function Home() {
   );
 }
 ```
+
 <!-- ### [Conventions](./CONVENTION.md) -->
 <!-- ## License
 Licensed under the [MIT license](./LICENSE). -->
