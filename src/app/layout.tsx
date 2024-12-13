@@ -16,29 +16,34 @@ import { SiteHeader } from "@/components/navigation/site-header";
 import { FeatureFlag } from "@/components/utils/featureFlag";
 import { ModeSelector } from "@/components/ui/themeSelector";
 import { SimpleFooter } from "@/components/navigation/footer";
+import { ScrollToTopButton } from "@/components/utils/TopButton";
 
 export default function RootLayout({
-	children,
+  children,
 }: Readonly<{
-	children: React.ReactNode;
+  children: React.ReactNode;
 }>) {
-	return (
-		<html lang="en">
-			<body className={cn("page-transition-easing font-sans", fonts)}>
-				<RootProvider>
-					<div data-wrapper="" className="">
-						<div className="mx-auto flex min-h-screen w-full flex-col border-border/40 min-[1800px]:max-w-[1536px] min-[1800px]:border-x dark:border-border">
-							<SiteHeader />
-							<main className="flex-1">{children}</main>
-							<SimpleFooter className="mt-auto" />
-						</div>
-					</div>
-					{/* checks if theme and theme button feature flags are enabled */}
-					<FeatureFlag featureFlag={["NEXT_THEME", "THEME_BUTTON"]}>
-						<ModeSelector className="fixed right-2 bottom-2 z-[60] " />
-					</FeatureFlag>
-				</RootProvider>
-			</body>
-		</html>
-	);
+  return (
+    <html lang="en">
+      <body className={cn("page-transition-easing font-sans", fonts)}>
+        <RootProvider>
+          <div data-wrapper="" className="">
+            <div className="mx-auto flex min-h-screen w-full flex-col border-border/40 min-[1800px]:max-w-[1536px] min-[1800px]:border-x dark:border-border">
+              <SiteHeader />
+              <main className="flex-1">{children}</main>
+              <SimpleFooter className="mt-auto" />
+            </div>
+          </div>
+          {/* checks if theme and theme button feature flags are enabled */}
+          <FeatureFlag featureFlag={["NEXT_THEME", "THEME_BUTTON"]}>
+            <ModeSelector
+              className="fixed right-2 bottom-2 z-[60]"
+              iconClassName="size-4"
+            />
+          </FeatureFlag>
+          <ScrollToTopButton className="fixed bottom-12 right-4" />
+        </RootProvider>
+      </body>
+    </html>
+  );
 }

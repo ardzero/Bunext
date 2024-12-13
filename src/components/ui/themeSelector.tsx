@@ -61,7 +61,13 @@ export function ModeDropdown({ className }: { className?: string }) {
   );
 }
 
-export function ModeSelector({ className }: { className?: string }) {
+export function ModeSelector({
+  className,
+  iconClassName,
+}: {
+  className?: string;
+  iconClassName?: string;
+}) {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = React.useState(false);
 
@@ -96,7 +102,7 @@ export function ModeSelector({ className }: { className?: string }) {
                 className="sr-only"
                 aria-label="light theme"
               />
-              <Sun className="h-4 w-4" />
+              <Sun className={cn("size-4", iconClassName)} />
             </Label>
           </TooltipTrigger>
           <TooltipContent side="bottom">
@@ -117,7 +123,7 @@ export function ModeSelector({ className }: { className?: string }) {
                 className="sr-only"
                 aria-label="dark theme"
               />
-              <Moon className="h-4 w-4" />
+              <Moon className={cn("size-4", iconClassName)} />
             </Label>
           </TooltipTrigger>
           <TooltipContent side="bottom">
@@ -138,7 +144,7 @@ export function ModeSelector({ className }: { className?: string }) {
                 className="sr-only"
                 aria-label="system theme"
               />
-              <LaptopIcon className="h-4 w-4" />
+              <LaptopIcon className={cn("size-4", iconClassName)} />
             </Label>
           </TooltipTrigger>
           <TooltipContent side="bottom">
