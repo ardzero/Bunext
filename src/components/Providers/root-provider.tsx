@@ -12,12 +12,7 @@ export function RootProvider({
   return (
     <>
       <NuqsAdapter>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme={FEATURE_FLAGS.DEFAULT_THEME}
-          enableSystem
-          disableTransitionOnChange
-        >
+        <ThemeProvider disableTransitionOnChange>
           {children}
           <Toaster />
         </ThemeProvider>
