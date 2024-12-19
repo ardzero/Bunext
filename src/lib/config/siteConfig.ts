@@ -55,10 +55,10 @@ export const siteMetaData: Metadata = {
 		description: siteData.description,
 		images: [
 			{
-				url: siteData.ogImage,
-				width: 1200,
-				height: 630,
-				alt: siteData.name,
+				url: siteData.ogImage.src,
+				width: siteData.ogImage.width,
+				height: siteData.ogImage.height,
+				alt: siteData.ogImage.alt,
 			},
 		],
 	},
@@ -150,9 +150,9 @@ export function getCustomMetaData({
 				url:
 					typeof ogImage === "string"
 						? ogImage
-						: ogImage?.src || siteData.ogImage,
-				width: 1200,
-				height: 630,
+						: ogImage?.src || siteData.ogImage.src,
+				width: siteData.ogImage.width,
+				height: siteData.ogImage.height,
 			},
 		},
 		twitter: {
@@ -163,7 +163,7 @@ export function getCustomMetaData({
 			images:
 				typeof ogImage === "string"
 					? ogImage
-					: ogImage?.src || siteData.ogImage,
+					: ogImage?.src || siteData.ogImage.src,
 			creator: twCreator || twData.creator,
 		},
 		alternates: {

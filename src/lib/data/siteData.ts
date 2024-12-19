@@ -10,7 +10,7 @@ export const siteData: TSiteData = {
 	baseUrl: "bunextt.vercel.app",
 	description:
 		"BUNEXT is a Next.js 15 Bun Starter with Shadcn UI, Tailwind CSS, TypeScript, Zod, React Hook Form, React Email, Resend, and React Hot Toast.",
-	ogImage: "/ogImage.webp",
+	ogImage: { src: "/ogImage.webp", alt: "Bunext", width: 1200, height: 630 },
 	metadata_color: {
 		light: "#fbf0df",
 		dark: "#fbf0df",
@@ -43,7 +43,7 @@ export const twitterMetaData: TtwitterMetaData = {
 	card: "summary_large_image",
 	title: siteData.name,
 	description: siteData.description,
-	images: siteData.ogImage,
+	images: siteData.ogImage.src,
 	creator: "@darkidop", //twitter username of author
 };
 

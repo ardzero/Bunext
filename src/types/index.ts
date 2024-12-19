@@ -29,6 +29,8 @@ export type Author = {
 export type TImage = {
     src: string;
     alt: string;
+    width?: number;
+    height?: number;
 };
 // nav data
 export type TnavData = {
@@ -60,7 +62,7 @@ export type TSiteData = {
     publisher: string;
     baseUrl: string;
     description: string;
-    ogImage: string;
+    ogImage: TImage;
     metadata_color: MetadataColor;
     author: Author;
     keywords: string[];
