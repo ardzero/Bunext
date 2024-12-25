@@ -40,8 +40,9 @@ npm run dev
 - Icons using [lucide-react](https://lucide.dev/)
 - Next theme provider (dark and light mode)
 - Url stage management using [nuqs](https://nuqs.47ng.com/)
-- Metadata generator for SEO (including apple-touch-icon)
+- Tailwind css only animations using [tailwindcss-motion](https://rombo.co/tailwind/)
 - Feature flags
+- Metadata generator for SEO (including apple-touch-icon)
 - [zod](https://zod.dev/) validation
 - Per Link page transition (without any library)
 - [Biome](https://biomejs.dev/) for linting and formatting

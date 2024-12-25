@@ -1,6 +1,8 @@
 import type { Config } from "tailwindcss";
 // plugins
 import tailwindcssAnimate from "tailwindcss-animate";
+// @ts-expect-error doesn't have ts types yet
+import tailwindcssMotion from "tailwindcss-motion";
 // import fluid, { extract, screens, fontSize } from 'fluid-tailwind'
 
 // custom configs
@@ -94,6 +96,7 @@ export default {
 
 	plugins: [
 		tailwindcssAnimate,
+		tailwindcssMotion,
 		utilities,
 		base,
 		// fluid, //fluid tailwind uncomment this to use fluid tailwind
