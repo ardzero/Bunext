@@ -1,4 +1,5 @@
 "use client";
+// a share modal with qr, fb, twitter/x, linkedin
 import Image from "next/image";
 import { Copy } from "lucide-react";
 import { Button } from "@/components/ui/button";

@@ -40,7 +40,7 @@ npm run dev
 - Icons using [lucide-react](https://lucide.dev/)
 - Next theme provider (dark and light mode)
 - Url stage management using [nuqs](https://nuqs.47ng.com/)
-- Tailwind css only animations using [tailwindcss-motion](https://rombo.co/tailwind/)
+- Tailwind css only animations using [tailwindcss-motion](https://docs.rombo.co/tailwind)
 - Feature flags
 - Metadata generator for SEO (including apple-touch-icon)
 - [zod](https://zod.dev/) validation

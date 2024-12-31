@@ -8,16 +8,17 @@ export const base = plugin(({ addBase, addVariant, matchVariant }) => {
 	};
 
 	addBase({
+
+		"*": { "@apply border-border min-w-0": {} },
 		"::-webkit-scrollbar": { width: "8px", height: "8px" },
 		"::-webkit-scrollbar-thumb": {
-			borderRadius: "6px",
+			borderRadius: "8px",
 			"@apply bg-foreground/20 dark:bg-foreground/15": {},
 		},
 		"::-webkit-scrollbar-thumb:hover": { "@apply bg-foreground/35": {} },
 		"::-webkit-scrollbar-track": {
 			"@apply bg-foreground/5": {},
 		},
-		"*": { "@apply border-border min-w-0": {} },
 	});
 	addBase({
 		html: {

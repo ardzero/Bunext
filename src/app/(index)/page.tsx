@@ -16,14 +16,13 @@ import {
   Moon,
   Palette,
   Search,
-  Shapes,
   ShieldCheck,
   SlidersHorizontal,
   Type,
   Wand2,
   Zap,
 } from "lucide-react";
-import Link from "next/link";
+import CLink from "@/components/utils/ConditionalLink";
 
 export default function Home() {
   const features = [
@@ -119,7 +118,6 @@ export default function Home() {
           <TransitionLink href="/pagetr" className="flex items-center gap-2">
             <ArrowRightLeft className="h-4 w-4" />
             <span className="">Page Transition</span>
-            {/* <span className="hidden sm:inline">Page Transition</span> */}
           </TransitionLink>
         </Button>
       </section>
