@@ -22,7 +22,7 @@ import {
   Wand2,
   Zap,
 } from "lucide-react";
-import CLink from "@/components/utils/ConditionalLink";
+import { TestComponent } from "@/components/TestComp";
 
 export default function Home() {
   const features = [
@@ -147,6 +147,9 @@ export default function Home() {
             </CardDescription>
           </CardContent>
         </Card>
+      </section>
+      <section className="grid place-items-center py-6">
+        <TestComponent></TestComponent>
       </section>
     </div>
   );

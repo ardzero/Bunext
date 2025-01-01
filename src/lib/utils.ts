@@ -79,6 +79,10 @@ export const generateUniqueCode = (): string | null => {
 	return uniqueCode?.toString();
 };
 
+// Generate a random number in a range. 
+export const randomNum = (min: number, max: number): number => (
+	Math.floor(Math.random() * (max - min)) + min
+);
 // simple hashing algorithm (not secure for password hashing)
 export function murmurhash(key: string) {
 	const remainder = key.length & 3;
