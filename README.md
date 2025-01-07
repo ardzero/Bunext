@@ -45,6 +45,7 @@ npm run dev
 - Metadata generator for SEO (including apple-touch-icon)
 - [zod](https://zod.dev/) validation
 - Per Link page transition (without any library)
+- Custom Image components with lazy loading and auto generated placeholder (worsk with or without `next/image`)
 - [Biome](https://biomejs.dev/) for linting and formatting
 - [Fluid Tailwind](https://fluid.tw/) for easier responsive design (disabled by default, to enable go to `tailwind.config.ts` and uncomment the fluid plugin variables, Note: the `min-*` and `max-*` variants don't work while using fluid-tailwind)
 - Utilities like `qrCode gen, string shortner, uniqueCode gen, img placeholder, email validation, hashing etc`
