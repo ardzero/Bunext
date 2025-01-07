@@ -14,8 +14,9 @@ export function TestCard({ className, index }: TTestCard) {
       ref={ref}
       className={cn(
         "w-full max-w-md p-6 rounded-lg shadow-lg bg-muted/45 transition-opacity duration-500 ",
-        isInView &&
-          "motion-scale-in-[0.41] motion-translate-x-in-[2%] motion-translate-y-in-[111%] motion-blur-in-[60px] motion-delay-75",
+        isInView
+          ? "motion-scale-in-[0.41] motion-translate-x-in-[2%] motion-translate-y-in-[111%] motion-blur-in-[60px] motion-delay-75"
+          : "opacity-0",
         className
       )}
     >
