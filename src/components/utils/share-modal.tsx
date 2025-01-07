@@ -1,6 +1,7 @@
 "use client";
 // a share modal with qr, fb, twitter/x, linkedin
 import Image from "next/image";
+import { Img } from "@/components/utils/Img";
 import { Copy } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { getQrCode } from "@/lib/utils";
@@ -137,14 +138,12 @@ export function ShareModal({
               {qrIcon ? (
                 <div className="size-64 md:size-52 ">{qrIcon}</div>
               ) : (
-                <Image
+                <Img
                   src={getQrCode(shareUrl)}
                   alt="a2e-qr"
-                  width={100}
-                  height={100}
+                  width={256}
+                  height={256}
                   className="size-64 md:size-52 rounded-lg dark:invert"
-                  placeholder="blur"
-                  blurDataURL="data:image/webp;base64,UklGRhoDAABXRUJQVlA4WAoAAAAgAAAAiAAAiAAASUNDUMgBAAAAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADZWUDggLAEAALAPAJ0BKokAiQA+3VihTb+yqqM0+a6L8BuJaW7f/O9jQqaYaAhVSWra4/GhFDmIKVzTnJDNV4W3lDo9y2L38gGk49KKvOloYVxf6ijAYpcSw+X55yIgCBEjybqnM+qlV2CZQq1SIsg/sij/ZBK5z/xfN7lq113UVbZfA0X+2Pto6W9caIxAAP7xcJZFS/J+l4fZ6LKjJJRMH8rhCfKXMbgrWA4L9S2N23IfzmJNl/A6G1cZTF8yYz97Ng/xexFNupwMQGxtAtMeOvEENZFX3YGFEckDL6/lvqHNDeO+qylxUZOX2jsV9OML1rXMLVJRycOZVb6feSW2KXeH5D9WMHIQZPSlDt72MNz4W8wMxCf5PvbJMTVdra4P4awXNccGFONBetplS62ib1AAAA=="
                 />
               )}
             </div>
