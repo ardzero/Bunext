@@ -105,7 +105,7 @@ export function ModeSelector({
               <Sun className={cn("size-4", iconClassName)} />
             </Label>
           </TooltipTrigger>
-          <TooltipContent side="bottom">
+          <TooltipContent side="bottom" showArrow={true}>
             <p>Light</p>
           </TooltipContent>
         </Tooltip>
@@ -126,7 +126,7 @@ export function ModeSelector({
               <Moon className={cn("size-4", iconClassName)} />
             </Label>
           </TooltipTrigger>
-          <TooltipContent side="bottom">
+          <TooltipContent side="bottom" showArrow={true}>
             <p>Dark</p>
           </TooltipContent>
         </Tooltip>
@@ -147,7 +147,7 @@ export function ModeSelector({
               <LaptopIcon className={cn("size-4", iconClassName)} />
             </Label>
           </TooltipTrigger>
-          <TooltipContent side="bottom">
+          <TooltipContent side="bottom" showArrow={true}>
             <p>System</p>
           </TooltipContent>
         </Tooltip>

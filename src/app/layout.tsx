@@ -38,7 +38,7 @@ export default function RootLayout({
           <FeatureFlag featureFlag={["NEXT_THEME", "THEME_BUTTON"]}>
             <ModeSelector
               className="fixed right-2 bottom-2 z-[60]"
-              iconClassName="size-4"
+              iconClassName="size-3"
             />
           </FeatureFlag>
           <ScrollToTopButton className="fixed bottom-12 right-4" />
