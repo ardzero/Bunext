@@ -7,8 +7,7 @@ const nextConfig: NextConfig = {
 	},
 	images: {
 		remotePatterns: [
-			{ protocol: "https", hostname: "api.qrserver.com" },
-			{ protocol: "https", hostname: "v0.dev" },
+			{ protocol: "https", hostname: "v0.dev", pathname: "/placeholder.svg" },
 		],
 	},
 };

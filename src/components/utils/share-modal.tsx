@@ -1,10 +1,9 @@
 "use client";
 // a share modal with qr, fb, twitter/x, linkedin
-import Image from "next/image";
-import { Img } from "@/components/utils/Img";
-import { Copy } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { getQrCode } from "@/lib/utils";
+// components
+import { Img } from "@/components/utils/Img";
+import { Button } from "@/components/ui/button";
 import {
   Drawer,
   DrawerClose,
@@ -14,9 +13,8 @@ import {
   DrawerTitle,
 } from "@/components/ui/drawer";
 import { Input } from "@/components/ui/input";
-import { toast } from "@/hooks/use-toast";
 import { Icons } from "@/components/utils/icons";
-// import { Img } from "@/components/utils/image";
+import { CopyButton } from "@/components/utils/copy";
 
 type ShareModalProps = React.ComponentProps<typeof Drawer> & {
   shareUrl: string;
@@ -35,22 +33,22 @@ export function ShareModal({
   title = "Share with friends",
   ...props
 }: ShareModalProps) {
-  const copyToClipboard = async () => {
-    try {
-      await navigator.clipboard.writeText(shareUrl);
-      toast({
-        title: "Copied!",
-        description: `URL: ${shareUrl}`,
-      });
-    } catch (err) {
-      console.error("Failed to copy: ", err);
-      toast({
-        title: "Error",
-        description: "Failed to copy the link. Please try again.",
-        variant: "destructive",
-      });
-    }
-  };
+  // const copyToClipboard = async () => {
+  //   try {
+  //     await navigator.clipboard.writeText(shareUrl);
+  //     toast({
+  //       title: "Copied!",
+  //       description: `URL: ${shareUrl}`,
+  //     });
+  //   } catch (err) {
+  //     console.error("Failed to copy: ", err);
+  //     toast({
+  //       title: "Error",
+  //       description: "Failed to copy the link. Please try again.",
+  //       variant: "destructive",
+  //     });
+  //   }
+  // };
 
   const shareToSocial = (platform: string) => {
     let url = "";
@@ -103,10 +101,11 @@ export function ShareModal({
                   readOnly
                   className="flex-grow text-xm"
                 />
-                <Button onClick={copyToClipboard} className="px-6">
+                {/* <Button onClick={copyToClipboard} className="px-6">
                   <Copy className="h-4 w-4 " />
                   Copy
-                </Button>
+                </Button> */}
+                <CopyButton copyContent={shareUrl} />
               </div>
               <div className="flex justify-center space-x-4 ">
                 <Button

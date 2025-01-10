@@ -37,7 +37,7 @@ export default function RootLayout({
           {/* checks if theme and theme button feature flags are enabled */}
           <FeatureFlag featureFlag={["NEXT_THEME", "THEME_BUTTON"]}>
             <ModeSelector
-              className="fixed right-2 bottom-2 z-[60]"
+              className="fixed right-2 bottom-2 z-50"
               iconClassName="size-3"
             />
           </FeatureFlag>
