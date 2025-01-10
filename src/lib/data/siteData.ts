@@ -6,8 +6,8 @@ export const siteData: TSiteData = {
 	favicon: "/favicon.svg", // .svg / .ico / .png
 	name: "BUNEXT - Next.js 15 Bun Starter",
 	shortName: "BUNEXT",
-	publisher: "bunextt.vercel.app",
-	baseUrl: "bunextt.vercel.app",
+	publisher: "bunext.ardastroid.com",
+	baseUrl: "bunext.ardastroid.com",
 	description:
 		"BUNEXT is a Next.js 15 Bun Starter with Shadcn UI, Tailwind CSS, TypeScript, Zod, React Hook Form, React Email, Resend, and React Hot Toast.",
 	ogImage: { src: "/ogImage.webp", alt: "Bunext", width: 1200, height: 630 },
@@ -16,8 +16,8 @@ export const siteData: TSiteData = {
 		dark: "#fbf0df",
 	},
 	author: {
-		name: "darkidop",
-		url: "https://zeneticesports.com/darkid",
+		name: "ardastroid",
+		url: "https://ardastroid.com/",
 	},
 	keywords: [
 		"Next.js",

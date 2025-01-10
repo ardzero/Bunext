@@ -1,6 +1,6 @@
 # Bunext
 
-A Next.js 15 app with Tailwind CSS template. [Live deployment](https://bunextt.vercel.app/)
+A Next.js 15 app with Tailwind CSS template. [Live deployment](https://bunext.ardastroid.com/)
 
 ## Usage (run locally)
 

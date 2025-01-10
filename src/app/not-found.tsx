@@ -4,7 +4,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 // icons
-import { Home } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 // components
 import { Button } from "@/components/ui/button";
 export default function NotFound() {
@@ -28,9 +28,14 @@ export default function NotFound() {
             </Link>
           </Button>
         )} */}
-        <Button className="mt-10" asChild>
+        <Button className="mt-10 group" asChild>
           <Link href="/">
-            <Home />
+            <ArrowLeft
+              className="-ms-1 opacity-60 transition-transform group-hover:-translate-x-0.5"
+              size={16}
+              strokeWidth={2}
+              aria-hidden="true"
+            />
             Return to Home
           </Link>
         </Button>
