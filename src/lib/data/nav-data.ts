@@ -19,10 +19,6 @@ export const navData: TnavData = {
 			href: "https://github.com/DarkidOP/Bunext?tab=readme-ov-file#bunext",
 			external: true,
 		},
-		{
-			label: "Contact",
-			href: "/contact",
-		},
 	],
 	iconButtons: [
 		{

@@ -1,9 +1,8 @@
 'use client'
-// best for
-// - Individual components
-// - When you need fine - grained control
-// - Simple implementations
+// a hook for animating elements when they enter the viewport (intErsection observer)
+// - must be used in a client component
 //   const { ref, isInView } = useIntersection({ threshold: 0.2, once: true });
+//   <div ref={ref} className={cn(isInView && 'motion-blur-in-[50px]')}>
 import { useEffect, useRef, useState } from 'react'
 
 interface UseIntersectionOptions {

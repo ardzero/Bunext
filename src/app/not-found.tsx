@@ -1,11 +1,12 @@
 "use client";
+// https://nextjs.org/docs/app/api-reference/file-conventions/not-found
+
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 // icons
 import { Home } from "lucide-react";
 // components
 import { Button } from "@/components/ui/button";
-// https://nextjs.org/docs/app/api-reference/file-conventions/not-found
 export default function NotFound() {
   const pathname = usePathname();
   return (
@@ -18,7 +19,6 @@ export default function NotFound() {
           &quot;{pathname}&quot;
         </code>
       </div>
-      {/* You can add navigation back to home or other important pages */}
       <div className="flex flex-wrap items-center justify-center gap-4">
         {/* {hasPreviousPath && (
           <Button className="mt-10" asChild>
