@@ -1,21 +1,21 @@
-"use client";
+'use client'
 // https://nextjs.org/docs/app/api-reference/file-conventions/not-found
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 // icons
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft } from 'lucide-react'
 // components
-import { Button } from "@/components/ui/button";
+import { Button } from '@/components/ui/button'
 export default function NotFound() {
-  const pathname = usePathname();
+  const pathname = usePathname()
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen motion-blur-in-[50px]">
-      <h1 className="text-9xl font-bold motion-preset-seesaw">404</h1>
+    <div className="flex min-h-screen flex-col items-center justify-center motion-blur-in-[50px]">
+      <h1 className="motion-preset-seesaw text-9xl font-bold">404</h1>
       <h2 className="text-2xl font-bold">Page Not Found</h2>
-      <div className="flex flex-wrap gap-2 items-center justify-center ">
+      <div className="flex flex-wrap items-center justify-center gap-2">
         <p className="mt-2">Sorry, we couldn&apos;t find</p>
-        <code className="mt-2 p-2 bg-muted/50 border rounded-md text-sm">
+        <code className="mt-2 rounded-md border bg-muted/50 p-2 text-sm">
           &quot;{pathname}&quot;
         </code>
       </div>
@@ -28,7 +28,7 @@ export default function NotFound() {
             </Link>
           </Button>
         )} */}
-        <Button className="mt-10 group" asChild>
+        <Button className="group mt-10" asChild>
           <Link href="/">
             <ArrowLeft
               className="-ms-1 opacity-60 transition-transform group-hover:-translate-x-0.5"
@@ -41,5 +41,5 @@ export default function NotFound() {
         </Button>
       </div>
     </div>
-  );
+  )
 }

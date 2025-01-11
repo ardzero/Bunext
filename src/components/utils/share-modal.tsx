@@ -1,9 +1,9 @@
-"use client";
+'use client'
 // a share modal with qr, fb, twitter/x, linkedin
-import { getQrCode } from "@/lib/utils";
+import { getQrCode } from '@/lib/utils'
 // components
-import { Img } from "@/components/utils/Img";
-import { Button } from "@/components/ui/button";
+import { Img } from '@/components/utils/Img'
+import { Button } from '@/components/ui/button'
 import {
   Drawer,
   DrawerClose,
@@ -11,26 +11,26 @@ import {
   DrawerFooter,
   DrawerTrigger,
   DrawerTitle,
-} from "@/components/ui/drawer";
-import { Input } from "@/components/ui/input";
-import { Icons } from "@/components/utils/icons";
-import { CopyButton } from "@/components/utils/copy";
+} from '@/components/ui/drawer'
+import { Input } from '@/components/ui/input'
+import { Icons } from '@/components/utils/icons'
+import { CopyButton } from '@/components/utils/copy'
 
 type ShareModalProps = React.ComponentProps<typeof Drawer> & {
-  shareUrl: string;
-  sharetoWindow?: boolean;
-  twText?: string;
+  shareUrl: string
+  sharetoWindow?: boolean
+  twText?: string
   // change your qr icon in src/components/utils/icons.tsx
-  qrIcon?: React.ReactNode;
-  title?: string;
-};
+  qrIcon?: React.ReactNode
+  title?: string
+}
 export function ShareModal({
   children,
   shareUrl,
   sharetoWindow,
   twText,
   qrIcon,
-  title = "Share with friends",
+  title = 'Share with friends',
   ...props
 }: ShareModalProps) {
   // const copyToClipboard = async () => {
@@ -51,55 +51,55 @@ export function ShareModal({
   // };
 
   const shareToSocial = (platform: string) => {
-    let url = "";
-    const encodedUrl = encodeURIComponent(shareUrl);
-    const twitterText = twText ? encodeURIComponent(twText) : "";
+    let url = ''
+    const encodedUrl = encodeURIComponent(shareUrl)
+    const twitterText = twText ? encodeURIComponent(twText) : ''
 
     switch (platform) {
-      case "facebook":
-        url = `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`;
-        break;
+      case 'facebook':
+        url = `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`
+        break
 
-      case "twitter":
-        url = `https://twitter.com/intent/tweet?text=${twitterText}&url=${encodedUrl}`;
-        break;
-      case "linkedin":
-        url = `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`;
-        break;
+      case 'twitter':
+        url = `https://twitter.com/intent/tweet?text=${twitterText}&url=${encodedUrl}`
+        break
+      case 'linkedin':
+        url = `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`
+        break
     }
 
     // Open in a new window with specific dimensions
-    const width = 600;
-    const height = 400;
-    const left = window.innerWidth / 2 - width / 2;
-    const top = window.innerHeight / 2 - height / 2;
+    const width = 600
+    const height = 400
+    const left = window.innerWidth / 2 - width / 2
+    const top = window.innerHeight / 2 - height / 2
 
     window.open(
       url,
-      "_blank",
+      '_blank',
       sharetoWindow
         ? `toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=${width}, height=${height}, top=${top}, left=${left}`
         : undefined
-    );
-  };
+    )
+  }
 
-  const iconClassName = "size-6 md:size-5 fill-foreground";
-  const buttonClassName = "grow group";
+  const iconClassName = 'size-6 md:size-5 fill-foreground'
+  const buttonClassName = 'grow group'
   return (
     <Drawer {...props}>
       <DrawerTrigger asChild>{children}</DrawerTrigger>
       <DrawerContent>
-        <div className="max-w-xl mx-auto">
-          <div className="p-4 space-y-6 md:flex flex-row-reverse gap-4 place-content-center items-center">
+        <div className="mx-auto max-w-xl">
+          <div className="flex-row-reverse place-content-center items-center gap-4 space-y-6 p-4 md:flex">
             <div>
               <DrawerTitle className="text-2xl font-medium">
                 {title}
               </DrawerTitle>
-              <div className="flex items-center space-x-2 mb-2">
+              <div className="mb-2 flex items-center space-x-2">
                 <Input
                   value={shareUrl?.toString()}
                   readOnly
-                  className="flex-grow text-xm"
+                  className="text-xm flex-grow"
                 />
                 {/* <Button onClick={copyToClipboard} className="px-6">
                   <Copy className="h-4 w-4 " />
@@ -107,9 +107,9 @@ export function ShareModal({
                 </Button> */}
                 <CopyButton copyContent={shareUrl} />
               </div>
-              <div className="flex justify-center space-x-4 ">
+              <div className="flex justify-center space-x-4">
                 <Button
-                  onClick={() => shareToSocial("facebook")}
+                  onClick={() => shareToSocial('facebook')}
                   variant="outline"
                   className={buttonClassName}
                 >
@@ -117,14 +117,14 @@ export function ShareModal({
                 </Button>
 
                 <Button
-                  onClick={() => shareToSocial("twitter")}
+                  onClick={() => shareToSocial('twitter')}
                   variant="outline"
                   className={buttonClassName}
                 >
                   <Icons.twitter className={iconClassName} />
                 </Button>
                 <Button
-                  onClick={() => shareToSocial("linkedin")}
+                  onClick={() => shareToSocial('linkedin')}
                   variant="outline"
                   className={buttonClassName}
                 >
@@ -133,21 +133,21 @@ export function ShareModal({
               </div>
             </div>
 
-            <div className="flex justify-center ">
+            <div className="flex justify-center">
               {qrIcon ? (
-                <div className="size-64 md:size-52 ">{qrIcon}</div>
+                <div className="size-64 md:size-52">{qrIcon}</div>
               ) : (
                 <Img
                   src={getQrCode(shareUrl)}
                   alt="a2e-qr"
                   width={256}
                   height={256}
-                  className="size-64 md:size-52 rounded-lg dark:invert"
+                  className="size-64 rounded-lg dark:invert md:size-52"
                 />
               )}
             </div>
           </div>
-          <DrawerFooter className="pt-0 mt-0">
+          <DrawerFooter className="mt-0 pt-0">
             <DrawerClose asChild>
               <Button variant="outline">Close</Button>
             </DrawerClose>
@@ -155,5 +155,5 @@ export function ShareModal({
         </div>
       </DrawerContent>
     </Drawer>
-  );
+  )
 }

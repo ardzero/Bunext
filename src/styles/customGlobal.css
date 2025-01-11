@@ -47,7 +47,7 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-input[type="number"] {
+input[type='number'] {
   appearance: textfield;
   -moz-appearance: textfield;
 }
@@ -121,7 +121,7 @@ input {
   object-fit: fill;
 }
 .boder_primary_gradient::before {
-  content: "";
+  content: '';
   width: calc(100% - 2px);
   height: calc(100% - 2px);
   border-radius: 50%;

@@ -1,11 +1,11 @@
-"use client";
-import { cn, getPlaceholder } from "@/lib/utils";
-import Image from "next/image";
+'use client'
+import { cn, getPlaceholder } from '@/lib/utils'
+import Image from 'next/image'
 
 type TTestComponent = {
-  className?: string;
-};
+  className?: string
+}
 
 export function TestComponent({ className }: TTestComponent) {
-  return <div className={cn("", className)}></div>;
+  return <div className={cn('', className)}></div>
 }

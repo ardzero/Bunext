@@ -9,12 +9,8 @@
     "build": "next build",
     "start": "next start",
     "preview": "next build && next start",
-    "check": "biome check .",
-    "check:fix": "biome check --write .",
-    "lint": "biome lint .",
-    "lint:fix": "biome lint --write --unsafe .",
-    "format": "biome format .",
-    "format:write": "biome format . --write"
+    "lint": "next lint",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,scss,md}\""
   },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.1.2",
@@ -42,33 +38,19 @@
     "zod": "^3.24.1"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.9.4",
     "@types/node": "^20.17.10",
     "@types/react": "19.0.1",
     "@types/react-dom": "19.0.2",
     "eslint": "^8.57.1",
     "eslint-config-next": "15.1.1",
+    "eslint-config-prettier": "^9.1.0",
     "fluid-tailwind": "^1.0.4",
     "postcss": "^8.4.49",
+    "prettier": "^3.4.2",
+    "prettier-plugin-tailwindcss": "^0.6.9",
     "tailwindcss": "^3.4.17",
     "tailwindcss-motion": "^1.0.0",
     "typescript": "^5.7.2"
-  },
-  "trustedDependencies": [
-    "@biomejs/biome"
-  ],
-  "lint-staged": {
-    "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}": [
-      "biome check --files-ignore-unknown=true",
-      "biome check --write --no-errors-on-unmatched",
-      "biome check --write --organize-imports-enabled=false --no-error  s-on-unmatched",
-      "biome check --write --unsafe --no-errors-on-unmatched",
-      "biome format --write --no-errors-on-unmatched",
-      "biome lint --write --no-errors-on-unmatched"
-    ],
-    "*": [
-      "biome check --no-errors-on-unmatched --files-ignore-unknown=true"
-    ]
   },
   "overrides": {
     "@types/react": "19.0.1",

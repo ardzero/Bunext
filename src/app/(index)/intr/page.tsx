@@ -1,4 +1,4 @@
-import { TestCard } from "./TestCard";
+import { TestCard } from './TestCard'
 
 export default function Page() {
   // Simulate a production error
@@ -13,5 +13,5 @@ export default function Page() {
         ))}
       </div>
     </main>
-  );
+  )
 }

@@ -1,9 +1,9 @@
-export type UserRole = "admin" | "tester" | "user";
+export type UserRole = 'admin' | 'tester' | 'user'
 export type User = {
-	id: string;
-	role: UserRole;
-};
+  id: string
+  role: UserRole
+}
 
 export function getUser() {
-	return { id: "x", role: "user" } as User;
+  return { id: 'x', role: 'user' } as User
 }

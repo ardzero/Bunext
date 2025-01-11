@@ -1,52 +1,52 @@
-"use client";
+'use client'
 
-import Link, { type LinkProps } from "next/link";
-import { useRouter } from "next/navigation";
-import * as React from "react";
+import Link, { type LinkProps } from 'next/link'
+import { useRouter } from 'next/navigation'
+import * as React from 'react'
 
-import { Button } from "@/components/ui/button";
+import { Button } from '@/components/ui/button'
 import {
   Drawer,
   DrawerContent,
   DrawerTitle,
   DrawerHeader,
   DrawerTrigger,
-} from "@/components/ui/drawer";
-import { useMetaColor } from "@/hooks/use-meta-color";
-import { cn, truncateString } from "@/lib/utils";
+} from '@/components/ui/drawer'
+import { useMetaColor } from '@/hooks/use-meta-color'
+import { cn, truncateString } from '@/lib/utils'
 
-import { navData } from "@/lib/data/nav-data";
-import Image from "next/image";
+import { navData } from '@/lib/data/nav-data'
+import Image from 'next/image'
 export function MobileNav() {
-  const [open, setOpen] = React.useState(false);
-  const { setMetaColor, metaColor } = useMetaColor();
+  const [open, setOpen] = React.useState(false)
+  const { setMetaColor, metaColor } = useMetaColor()
 
   const onOpenChange = React.useCallback(
     (open: boolean) => {
-      setOpen(open);
-      setMetaColor(open ? "#09090b" : metaColor);
+      setOpen(open)
+      setMetaColor(open ? '#09090b' : metaColor)
     },
     [setMetaColor, metaColor]
-  );
+  )
   React.useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 768 && open) {
-        setOpen(false);
-        setMetaColor(metaColor);
+        setOpen(false)
+        setMetaColor(metaColor)
       }
-    };
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, [open, setMetaColor, metaColor]);
+    }
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [open, setMetaColor, metaColor])
 
   return (
-    <div className="flex md:hidden justify-between  items-center">
+    <div className="flex items-center justify-between md:hidden">
       <Drawer open={open} onOpenChange={onOpenChange}>
         <DrawerTrigger asChild>
           <Button
             variant="ghost"
-            className="-ml-2 mr-2 h-8 w-8 px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 group"
-            aria-label={open ? "Close menu" : "Open menu"}
+            className="group -ml-2 mr-2 h-8 w-8 px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0"
+            aria-label={open ? 'Close menu' : 'Open menu'}
             aria-expanded={open}
           >
             <svg
@@ -90,7 +90,7 @@ export function MobileNav() {
                     <MobileLink
                       key={item.href}
                       href={item.href}
-                      target={item.external ? "_blank" : ""}
+                      target={item.external ? '_blank' : ''}
                       onOpenChange={setOpen}
                     >
                       {item.label}
@@ -112,20 +112,20 @@ export function MobileNav() {
           />
         )}
         <span
-          className={cn("font-bold text-2xl", !navData.showTitle && "sr-only")}
+          className={cn('text-2xl font-bold', !navData.showTitle && 'sr-only')}
         >
           {truncateString(navData.title, 20)}
         </span>
       </Link>
     </div>
-  );
+  )
 }
 
 interface MobileLinkProps extends LinkProps {
-  onOpenChange?: (open: boolean) => void;
-  children: React.ReactNode;
-  className?: string;
-  target?: string;
+  onOpenChange?: (open: boolean) => void
+  children: React.ReactNode
+  className?: string
+  target?: string
 }
 
 function MobileLink({
@@ -136,19 +136,19 @@ function MobileLink({
   target,
   ...props
 }: MobileLinkProps) {
-  const router = useRouter();
+  const router = useRouter()
   return (
     <Link
       href={href}
       onClick={() => {
-        router.push(href.toString());
-        onOpenChange?.(false);
+        router.push(href.toString())
+        onOpenChange?.(false)
       }}
-      className={cn("text-lg", className)}
+      className={cn('text-lg', className)}
       target={target}
       {...props}
     >
       {children}
     </Link>
-  );
+  )
 }

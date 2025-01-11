@@ -1,18 +1,18 @@
-"use client";
-import { useState } from "react";
-import { Skeleton } from "@/components/ui/skeleton";
-import { useLazyLoad } from "@/hooks/use-lazy-load";
-import { cn } from "@/lib/utils";
+'use client'
+import { useState } from 'react'
+import { Skeleton } from '@/components/ui/skeleton'
+import { useLazyLoad } from '@/hooks/use-lazy-load'
+import { cn } from '@/lib/utils'
 // lazy loads imgs with a placeholder on the client side
 // does not optimizes images, just lazy loads them client side with a skeleton placeholder
 interface ResponsiveImageProps
   extends React.ImgHTMLAttributes<HTMLImageElement> {
-  src: string;
-  alt: string;
-  width: number;
-  height: number;
-  className?: string;
-  skeletonClassName?: string;
+  src: string
+  alt: string
+  width: number
+  height: number
+  className?: string
+  skeletonClassName?: string
 }
 
 export function Img({
@@ -20,20 +20,20 @@ export function Img({
   alt,
   width,
   height,
-  className = "",
-  skeletonClassName = "",
+  className = '',
+  skeletonClassName = '',
   ...restProps
 }: ResponsiveImageProps) {
-  const [imageRef, isInView] = useLazyLoad();
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [hasError, setHasError] = useState(false);
-  const aspectRatio = `${width} / ${height}`;
-  const showAltText = width > 100 && height > 100;
+  const [imageRef, isInView] = useLazyLoad()
+  const [isLoaded, setIsLoaded] = useState(false)
+  const [hasError, setHasError] = useState(false)
+  const aspectRatio = `${width} / ${height}`
+  const showAltText = width > 100 && height > 100
 
   return (
     <div
       ref={imageRef}
-      className={cn("relative w-full overflow-hidden", className)}
+      className={cn('relative w-full overflow-hidden', className)}
       style={{
         aspectRatio: aspectRatio,
         maxWidth: `${width}px`,
@@ -47,7 +47,7 @@ export function Img({
           alt={alt}
           width={width}
           height={height}
-          className="absolute top-0 left-0 w-full h-full object-cover"
+          className="absolute left-0 top-0 h-full w-full object-cover"
         />
       </noscript>
 
@@ -59,8 +59,8 @@ export function Img({
           width={width}
           height={height}
           className={cn(
-            "absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-300",
-            isLoaded && !hasError ? "opacity-100" : "opacity-0"
+            'absolute left-0 top-0 h-full w-full object-cover transition-opacity duration-300',
+            isLoaded && !hasError ? 'opacity-100' : 'opacity-0'
           )}
           onLoad={() => setIsLoaded(true)}
           onError={() => setHasError(true)}
@@ -70,14 +70,14 @@ export function Img({
       {!isLoaded && (
         <Skeleton
           className={cn(
-            "absolute top-0 left-0 w-full h-full rounded-none",
+            'absolute left-0 top-0 h-full w-full rounded-none',
             skeletonClassName,
-            hasError && "[animation-play-state:paused]"
+            hasError && '[animation-play-state:paused]'
           )}
         />
       )}
       {hasError && (
-        <div className="absolute inset-0 flex items-center justify-center text-red-600 flex-col">
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-red-600">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -88,17 +88,17 @@ export function Img({
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            className="w-[30%] h-[30%] min-w-[30px] min-h-[30px] max-w-[40px] max-h-[40px]"
+            className="h-[30%] max-h-[40px] min-h-[30px] w-[30%] min-w-[30px] max-w-[40px]"
           >
             <circle cx="12" cy="12" r="10"></circle>
             <line x1="12" y1="8" x2="12" y2="12"></line>
             <line x1="12" y1="16" x2="12.01" y2="16"></line>
           </svg>
           {showAltText && (
-            <span className="mt-2 text-sm text-center px-2">{alt}</span>
+            <span className="mt-2 px-2 text-center text-sm">{alt}</span>
           )}
         </div>
       )}
     </div>
-  );
+  )
 }

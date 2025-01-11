@@ -1,14 +1,14 @@
 // components/UnstyledLink.tsx
-import { cn } from "@/lib/utils";
-import Link, { LinkProps } from "next/link";
+import { cn } from '@/lib/utils'
+import Link, { LinkProps } from 'next/link'
 
 export type UnstyledLinkProps = {
-  href: string;
-  children: React.ReactNode;
-  openNewTab?: boolean;
-  className?: string;
-} & React.ComponentPropsWithoutRef<"a"> &
-  LinkProps;
+  href: string
+  children: React.ReactNode
+  openNewTab?: boolean
+  className?: string
+} & React.ComponentPropsWithoutRef<'a'> &
+  LinkProps
 
 export default function CLink({
   children,
@@ -20,7 +20,7 @@ export default function CLink({
   const isNewTab =
     openNewTab !== undefined
       ? openNewTab
-      : href && !href.startsWith("/") && !href.startsWith("#");
+      : href && !href.startsWith('/') && !href.startsWith('#')
 
   if (!isNewTab) {
     return (
@@ -29,7 +29,7 @@ export default function CLink({
           {children}
         </a>
       </Link>
-    );
+    )
   }
 
   return (
@@ -38,9 +38,9 @@ export default function CLink({
       rel="noopener noreferrer"
       href={href}
       {...rest}
-      className={cn(className, "cursor-newtab")}
+      className={cn(className, 'cursor-newtab')}
     >
       {children}
     </a>
-  );
+  )
 }

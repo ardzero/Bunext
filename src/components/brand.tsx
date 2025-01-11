@@ -1,17 +1,17 @@
-import type { LinkProps } from "next/link";
+import type { LinkProps } from 'next/link'
 
-import Link from "next/link";
+import Link from 'next/link'
 
-import { cn } from "@/lib/utils";
-import { Img } from "@/components/utils/Img";
+import { cn } from '@/lib/utils'
+import { Img } from '@/components/utils/Img'
 
 type TLogo = LinkProps & {
-  className?: string;
-  href?: string;
-  iconClassName?: string;
-  height?: number;
-  width?: number;
-};
+  className?: string
+  href?: string
+  iconClassName?: string
+  height?: number
+  width?: number
+}
 
 export function Logo({
   className,
@@ -22,7 +22,7 @@ export function Logo({
   ...props
 }: TLogo) {
   return (
-    <Link href={href || "/"} {...props} className={cn("", className)}>
+    <Link href={href || '/'} {...props} className={cn('', className)}>
       <Img
         height={height || 32}
         src="/logo.svg"
@@ -31,5 +31,5 @@ export function Logo({
         className={iconClassName}
       />
     </Link>
-  );
+  )
 }

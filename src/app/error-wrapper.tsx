@@ -1,24 +1,24 @@
-"use client";
+'use client'
 // this is used to simulate an error in the production environment to check global error handling
-import "@/styles/globals.css";
-import "@/styles/customGlobal.css";
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
+import '@/styles/globals.css'
+import '@/styles/customGlobal.css'
+import { useState } from 'react'
+import { Button } from '@/components/ui/button'
 
 interface Props {
-  children: React.ReactNode;
+  children: React.ReactNode
 }
 
 const ErrorSimulator = ({
-  message = "This is a simulated error",
+  message = 'This is a simulated error',
 }: {
-  message?: string;
+  message?: string
 }) => {
-  const [error, setError] = useState(false);
-  if (error) throw new Error(message);
+  const [error, setError] = useState(false)
+  if (error) throw new Error(message)
 
-  return <Button onClick={() => setError(true)}>Simulate Error</Button>;
-};
+  return <Button onClick={() => setError(true)}>Simulate Error</Button>
+}
 
 const ErrorWrapper = ({ children }: Props) => {
   return (
@@ -26,7 +26,7 @@ const ErrorWrapper = ({ children }: Props) => {
       {children}
       <ErrorSimulator />
     </div>
-  );
-};
+  )
+}
 
-export default ErrorWrapper;
+export default ErrorWrapper
