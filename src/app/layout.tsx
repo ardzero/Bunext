@@ -17,6 +17,8 @@ import { FeatureFlag } from "@/components/utils/featureFlag";
 import { ModeSelector } from "@/components/ui/themeSelector";
 import { SimpleFooter } from "@/components/navigation/footer";
 import { ScrollToTopButton } from "@/components/utils/TopButton";
+import { Suspense } from "react";
+import Loading from "./loading";
 // this is used to simulate an error in the production environment to check global error handling
 // import ErrorWrapper from "./error-wrapper";
 
@@ -33,8 +35,7 @@ export default function RootLayout({
             <div className="mx-auto flex min-h-screen w-full flex-col border-border/40 min-[1800px]:max-w-[1536px] min-[1800px]:border-x dark:border-border">
               <SiteHeader />
               <main className="flex-1">
-                {/* <ErrorWrapper>{children}</ErrorWrapper> */}
-                {children}
+                <Suspense fallback={<Loading />}>{children}</Suspense>
               </main>
               <SimpleFooter className="mt-auto" />
             </div>
