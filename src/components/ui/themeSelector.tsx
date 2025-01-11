@@ -135,7 +135,7 @@ export function ModeSelector({
           <TooltipTrigger asChild>
             <Label
               htmlFor="system"
-              className="flex flex-col items-center justify-between rounded-full bg-popover p-2 hover:bg-accent hover:text-accent-foreground [&:has([data-state=checked])]:bg-accent"
+              className="flex items-center justify-between rounded-full bg-popover flex-col p-2 hover:bg-accent hover:text-accent-foreground [&:has([data-state=checked])]:bg-accent"
               onClick={() => setTheme("system")}
             >
               <RadioGroupItem
