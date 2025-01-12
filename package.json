@@ -1,9 +1,19 @@
 {
-  "name": "bunext",
-  "description": "Bunext - Next.js 15 template with Tailwind CSS and Bun",
+  "name": "@ardly/bunext",
+  "description": "Bunext - A Next.js 15 template with Tailwind CSS, shadcn ui and Bun with some utilities built in",
   "author": "Ard Astroid <ardastroid@gmail.com>",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.4",
+  "bin": "./bin/cli.mjs",
+  "keywords": [
+    "next.js",
+    "react",
+    "typescript",
+    "tailwindcss",
+    "shadcn-ui",
+    "bun",
+    "template",
+    "starter"
+  ],
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
@@ -53,6 +63,8 @@
     "typescript": "^5.7.2"
   },
   "overrides": {
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
     "@types/react": "19.0.1",
     "@types/react-dom": "19.0.2"
   }
