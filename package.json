@@ -2,7 +2,8 @@
   "name": "bunext",
   "description": "Bunext - A Next.js 15 template with Tailwind CSS, shadcn ui and Bun with some utilities built in",
   "author": "Ard Astroid <ardastroid@gmail.com>",
-  "version": "1.0.6",
+  "version": "1.0.0",
+  "private": true,
   "keywords": [
     "next.js",
     "react",
@@ -68,7 +69,8 @@
     "@types/react-dom": "19.0.2"
   },
   "trustedDependencies": [
-    "next"
+    "next",
+    "sharp"
   ],
   "bun": {
     "runtime": true
