@@ -1,9 +1,8 @@
 {
-  "name": "@ardly/bunext",
+  "name": "bunext",
   "description": "Bunext - A Next.js 15 template with Tailwind CSS, shadcn ui and Bun with some utilities built in",
   "author": "Ard Astroid <ardastroid@gmail.com>",
   "version": "1.0.6",
-  "bin": "./bin/cli.mjs",
   "keywords": [
     "next.js",
     "react",
