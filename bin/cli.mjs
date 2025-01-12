@@ -23,11 +23,35 @@ const args = process.argv.slice(2)
 const useVSCode = args.includes('--vs')
 const useCursor = args.includes('--cursor')
 
+const validateRepoName = (name) => {
+  const validNameRegex = /^[a-z0-9-]+$/
+  return validNameRegex.test(name)
+}
+
+const promptForValidRepoName = (callback) => {
+  rl.question(
+    'Please enter a name for your project (lowercase letters, numbers and hyphens only): ',
+    (answer) => {
+      if (validateRepoName(answer)) {
+        repoName = answer
+        callback()
+      } else {
+        console.error(
+          'Invalid project name. Please use only lowercase letters, numbers and hyphens.'
+        )
+        promptForValidRepoName(callback)
+      }
+    }
+  )
+}
+
 if (!repoName || repoName.startsWith('--')) {
-  rl.question('Please enter a name for your project: ', (answer) => {
-    repoName = answer
-    initializeProject()
-  })
+  promptForValidRepoName(initializeProject)
+} else if (!validateRepoName(repoName)) {
+  console.error(
+    'Invalid project name. Please use only lowercase letters, numbers and hyphens.'
+  )
+  promptForValidRepoName(initializeProject)
 } else {
   initializeProject()
 }
