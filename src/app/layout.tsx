@@ -29,6 +29,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      {/* <head>
+        <script src="//unpkg.com/react-scan/dist/auto.global.js" async />
+      </head> */}
       <body className={cn('page-transition-easing font-sans', fonts)}>
         <RootProvider>
           <div data-wrapper="" className="">

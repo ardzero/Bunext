@@ -17,6 +17,9 @@ const nextConfig: NextConfig = {
   },
   compiler:
     process.env.NODE_ENV === 'production' ? { removeConsole: true } : {},
+  experimental: {
+    reactCompiler: true, // 'annotation' to make it opt in https://nextjs.org/docs/app/api-reference/config/next-config-js/reactCompiler
+  }
 }
 
 export default nextConfig
