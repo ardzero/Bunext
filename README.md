@@ -33,7 +33,7 @@ npm run dev
 ## Features
 
 - Next.js 15 App Directory
-- Tailwind CSS
+- Tailwind v4 CSS
 - [Shadcn](https://ui.shadcn.com/) components
 - Custom util components like `share modal, multi-select(no library), Img, Icons, etc`
 - CustomFont Optimization using [Next font](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts)
