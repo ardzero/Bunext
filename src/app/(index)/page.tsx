@@ -86,10 +86,10 @@ export default function Home() {
       description: 'Easier responsive design with fluid utilities.',
     },
     {
-      title: 'Biome',
+      title: 'Prettier',
       icon: SlidersHorizontal,
       description:
-        'Modern linting and formatting for JavaScript and TypeScript.',
+        'Prettier is a code formatter that formats your code to make it more readable.',
     },
     {
       title: 'Utility Functions',

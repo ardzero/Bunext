@@ -93,7 +93,7 @@ type TgetCustomMetaData = {
   ogTitleSuffix?: boolean
   longogTitleSuffix?: boolean
   ogImage?: string | StaticImageData
-  robots?: 'index, follow' | 'noindex, nofollow'
+  robots?: 'index, follow' | 'noindex, nofollow' | { index: boolean; follow: boolean }
 }
 
 // helpful for defining custom metadata for pages without clutter
