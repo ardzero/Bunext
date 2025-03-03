@@ -1,107 +1,77 @@
 import { ImageResponse } from 'next/og'
 
-export type OgImageOptions = {
-  title: string
-  subtitle?: string
-  initials?: string
-  primaryColor?: string
-  secondaryColor?: string
-  bgGradientFrom?: string
-  bgGradientTo?: string
-  width?: number
-  height?: number
+// Image metadata
+export const size = {
+  width: 1200,
+  height: 630,
 }
 
-export function generateOgImage(options: OgImageOptions) {
-  const {
-    title,
-    subtitle = '',
-    initials = title.substring(0, 2).toUpperCase(),
-    primaryColor = '#7ceb5a',
-    secondaryColor = '#ffffff',
-    bgGradientFrom = '#0a192f',
-    bgGradientTo = '#0f2e1f',
-    width = 1200,
-    height = 630,
-  } = options
+// Image generation
+export async function GenerateImage(params: {
+  title: string
+  description?: string
+}) {
+  //   // Fonts
+  //   const interSemiBold = fetch(
+  //     new URL('../fonts/Inter-SemiBold.ttf', import.meta.url)
+  //   ).then((res) => res.arrayBuffer())
+  //   const interLight = fetch(
+  //     new URL('../fonts/Inter-Light.ttf', import.meta.url)
+  //   ).then((res) => res.arrayBuffer())
 
   return new ImageResponse(
     (
+      // ImageResponse JSX element
       <div
         style={{
-          background: `linear-gradient(to bottom right, ${bgGradientFrom}, ${bgGradientTo})`,
+          fontSize: 160,
+          background: 'black',
           width: '100%',
           height: '100%',
           display: 'flex',
+          textAlign: 'center',
           alignItems: 'center',
           justifyContent: 'center',
+          color: 'white',
+          fontFamily: 'sans-serif',
         }}
       >
         <div
           style={{
             display: 'flex',
+            flexDirection: 'column',
+            textAlign: 'center',
             alignItems: 'center',
             justifyContent: 'center',
-            gap: '20px',
+            gap: 4,
           }}
         >
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              width: '120px',
-              height: '120px',
-              borderRadius: '60px',
-              border: `4px solid ${primaryColor}`,
-            }}
-          >
-            <span
-              style={{
-                fontSize: '60px',
-                fontWeight: 'bold',
-                color: primaryColor,
-              }}
-            >
-              {initials}
-            </span>
-          </div>
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'flex-start',
-            }}
-          >
-            <span
-              style={{
-                fontSize: '80px',
-                fontWeight: 'bold',
-                color: primaryColor,
-                lineHeight: '1',
-              }}
-            >
-              {title.toUpperCase()}
-            </span>
-            {subtitle && (
-              <span
-                style={{
-                  fontSize: '60px',
-                  fontWeight: 'bold',
-                  color: secondaryColor,
-                  lineHeight: '1',
-                }}
-              >
-                {subtitle.toUpperCase()}
-              </span>
-            )}
-          </div>
+          <span style={{ fontWeight: 600 }}>{params.title}</span>
+          <span style={{ fontSize: 40, fontWeight: 300 }}>
+            {params.description}
+          </span>
         </div>
       </div>
     ),
+    // ImageResponse options
     {
-      width,
-      height,
+      // For convenience, we can re-use the exported opengraph-image
+      // size config to also set the ImageResponse's width and height.
+      ...size,
+      //   fonts: [
+      //     {
+      //       name: 'Inter',
+      //       data: await interSemiBold,
+      //       style: 'normal',
+      //       weight: 600,
+      //     },
+      //     {
+      //       name: 'Inter',
+      //       data: await interLight,
+      //       style: 'normal',
+      //       weight: 300,
+      //     },
+      //   ],
     }
   )
 }
