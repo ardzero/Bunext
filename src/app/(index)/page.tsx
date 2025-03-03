@@ -102,10 +102,10 @@ export default function Home() {
   return (
     <div className="container mx-auto px-4 py-8">
       <section className="mb-12 text-center">
-        <h1 className="motion-preset-bounce mb-4 font-clash text-5xl font-medium tracking-tight motion-duration-500">
+        <h1 className="motion-preset-bounce font-clash motion-duration-500 mb-4 text-5xl font-medium tracking-tight">
           Next.js 15 Bun Starter Template
         </h1>
-        <p className="motion-preset-bounce mx-auto mb-8 max-w-2xl text-xl text-muted-foreground motion-duration-500">
+        <p className="motion-preset-bounce text-muted-foreground motion-duration-500 mx-auto mb-8 max-w-2xl text-xl">
           Jumpstart your Next.js projects with this feature-packed starter
           template. Built with performance, accessibility, and developer
           experience in mind.
@@ -121,7 +121,7 @@ export default function Home() {
           </TransitionLink>
         </Button>
       </section>
-      <section className="grid gap-6 motion-scale-in-[0.5] motion-translate-x-in-[39%] motion-translate-y-in-[84%] motion-rotate-in-[8deg] motion-blur-in-[5px] motion-opacity-in-[0%] motion-duration-[0.35s] motion-duration-[0.53s]/scale motion-duration-[0.53s]/translate motion-duration-[0.63s]/rotate sm:grid-cols-2 lg:grid-cols-3">
+      <section className="motion-scale-in-[0.5] motion-translate-x-in-[39%] motion-translate-y-in-[84%] motion-rotate-in-[8deg] motion-blur-in-[5px] motion-opacity-in-[0%] motion-duration-[0.35s] motion-duration-[0.53s]/scale motion-duration-[0.53s]/translate motion-duration-[0.63s]/rotate grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {features.map((feature, index) => (
           <Card key={index}>
             <CardHeader>

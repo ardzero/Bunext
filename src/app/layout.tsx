@@ -35,7 +35,7 @@ export default function RootLayout({
       <body className={cn('page-transition-easing font-sans', fonts)}>
         <RootProvider>
           <div data-wrapper="" className="">
-            <div className="mx-auto flex min-h-screen w-full flex-col border-border/40 dark:border-border min-[1800px]:max-w-[1536px] min-[1800px]:border-x">
+            <div className="border-border/40 dark:border-border mx-auto flex min-h-screen w-full flex-col min-[1800px]:max-w-[1536px] min-[1800px]:border-x">
               <SiteHeader />
               <main className="flex-1">
                 {/* <Suspense fallback={<Loading />}>{children}</Suspense> */}
@@ -47,11 +47,11 @@ export default function RootLayout({
           {/* checks if theme and theme button feature flags are enabled */}
           <FeatureFlag featureFlag={['NEXT_THEME', 'THEME_BUTTON']}>
             <ModeSelector
-              className="fixed bottom-2 right-2 z-50"
+              className="fixed right-2 bottom-2 z-50"
               iconClassName="size-3"
             />
           </FeatureFlag>
-          <ScrollToTopButton className="fixed bottom-12 right-4" />
+          <ScrollToTopButton className="fixed right-4 bottom-12" />
         </RootProvider>
       </body>
     </html>

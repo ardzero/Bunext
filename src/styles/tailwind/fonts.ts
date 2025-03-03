@@ -4,7 +4,7 @@ import localFont from 'next/font/local'
 const fontSans = FontSans({
   subsets: ['latin'],
   weight: ['400', '500', '700'],
-  variable: '--font-inter',
+  variable: '--font-sans',
 })
 
 const ClashDisplay = localFont({
@@ -40,7 +40,7 @@ const ClashDisplay = localFont({
       style: 'normal',
     },
   ],
-  variable: '--font-clashDisplay',
+  variable: '--font-clash',
 })
 
 // array of fonts
