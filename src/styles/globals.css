@@ -233,7 +233,7 @@
 
 /* Link styling */
 @utility link {
-  color: hsl(var(--primary));
+  color: var(--primary);
   text-decoration-thickness: 2px;
   text-underline-offset: 2px;
 
@@ -332,7 +332,7 @@
     width: calc(100% - 2px);
     height: calc(100% - 2px);
     border-radius: 50%;
-    background-color: hsl(var(--background));
+    background-color: var(--background);
     position: absolute;
     top: 50%;
     left: 50%;
@@ -341,11 +341,7 @@
 }
 
 @utility bg-liner-overlay-gradient {
-  background: linear-gradient(
-    180deg,
-    hsl(var(--background) / 0) 0%,
-    hsl(var(--background) / 1) 100%
-  );
+  @apply from-background/0 to-background bg-gradient-to-b;
 }
 /* @layer utilities {
 } */
