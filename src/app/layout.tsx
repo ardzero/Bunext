@@ -8,7 +8,7 @@ import '@/styles/globals.css'
 import '@/styles/customGlobal.css'
 // utilities
 import { cn } from '@/lib/utils'
-import { fonts } from '@/styles/tailwind/fonts'
+import { fonts } from '@/styles/fonts'
 // providers
 import { RootProvider } from '@/components/Providers/root-provider'
 // components
