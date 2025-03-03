@@ -80,14 +80,14 @@ export default function Home() {
       description:
         'Per-link page transitions without any additional libraries.',
     },
-    {
-      title: 'Fluid Tailwind',
-      icon: Wand2,
-      description: 'Easier responsive design with fluid utilities.',
-    },
+    // {
+    //   title: 'Fluid Tailwind',
+    //   icon: Wand2,
+    //   description: 'Easier responsive design with fluid utilities.',
+    // },
     {
       title: 'Prettier',
-      icon: SlidersHorizontal,
+      icon: Wand2,
       description:
         'Prettier is a code formatter that formats your code to make it more readable.',
     },
@@ -135,7 +135,7 @@ export default function Home() {
             </CardContent>
           </Card>
         ))}
-        <Card className="text-foreground/30">
+        <Card className="text-foreground/30 grow">
           <CardHeader></CardHeader>
           <CardContent className="text-center">
             <div className="-ml-3 flex items-center justify-center gap-2">

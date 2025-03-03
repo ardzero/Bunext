@@ -46,7 +46,7 @@ npm run dev
 - [zod](https://zod.dev/) validation
 - Per Link page transition (without any library)
 - Custom Image components with lazy loading and auto generated placeholder (worsk with or without `next/image`)
-- [Biome](https://biomejs.dev/) for linting and formatting
+- [Prettier](https://prettier.io/) for linting and formatting
 - [Fluid Tailwind](https://fluid.tw/) for easier responsive design (disabled by default, to enable go to `tailwind.config.ts` and uncomment the fluid plugin variables, Note: the `min-*` and `max-*` variants don't work while using fluid-tailwind)
 - Utilities like `qrCode gen, string shortner, uniqueCode gen, img placeholder, email validation, hashing etc`
 
@@ -122,7 +122,7 @@ function Home() {
 
 MIT License
 
-Copyright (c) 2024 Farhan Ashhab Nur / [@darkidop](https://github.com/darkidop)
+Copyright (c) 2024 Farhan Ashhab Nur / [@ardzero](https://github.com/ardzero)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
