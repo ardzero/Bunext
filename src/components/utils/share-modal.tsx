@@ -99,7 +99,7 @@ export function ShareModal({
                 <Input
                   value={shareUrl?.toString()}
                   readOnly
-                  className="text-xm flex-grow"
+                  className="text-xm grow"
                 />
                 {/* <Button onClick={copyToClipboard} className="px-6">
                   <Copy className="h-4 w-4 " />

@@ -48,7 +48,7 @@ const BlurImg = async (props: ImgProps) => {
   )
   return (
     <Img
-      placeholder="blur"
+      placeholder="blur-sm"
       blurDataURL={blurData}
       alt={props.alt || ''}
       {...props}
