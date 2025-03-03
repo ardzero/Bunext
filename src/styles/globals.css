@@ -264,7 +264,9 @@
 }
 
 /* gradients for cricle overlays */
-@utility bg-primary-radial-gradient {
+
+/* does not work cause we're directly using hsl values in vars */
+/* @utility bg-primary-radial-gradient {
   background: hsl(var(--primary) / 0.03);
   background: radial-gradient(
     circle,
@@ -289,7 +291,7 @@
     background-position: center;
     object-fit: fill;
   }
-}
+} 
 
 @utility bg-foreground-radial-gradient {
   background: hsl(var(--foreground) / 0.01);
@@ -304,17 +306,9 @@
   background-position: center;
   object-fit: fill;
 }
-
+*/
 @utility border-primary-gradient {
   position: relative;
-  background: hsl(var(--primary) / 0.03);
-  background: radial-gradient(
-    linear,
-    hsl(var(--primary) / 0.5) 0%,
-    hsl(var(--primary) / 0.18) 30%,
-    hsl(var(--primary) / 0.05) 50%,
-    hsl(var(--primary) / 0) 70%
-  );
   background: linear-gradient(
     320deg,
     rgba(119, 47, 253, 1) 0%,
