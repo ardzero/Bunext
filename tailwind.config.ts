@@ -1,14 +1,7 @@
 import type { Config } from 'tailwindcss'
-// plugins
-import tailwindcssAnimate from 'tailwindcss-animate'
-// @ts-expect-error doesn't have ts types yet
-import tailwindcssMotion from 'tailwindcss-motion'
-// import fluid, { extract, screens, fontSize } from 'fluid-tailwind'
 
 // custom configs
 import { fontFamily } from 'tailwindcss/defaultTheme'
-import { base } from './src/styles/tailwind/base'
-import { utilities } from './src/styles/tailwind/tailwindUtils'
 
 export default {
   darkMode: ['class'],
@@ -93,12 +86,4 @@ export default {
       },
     },
   },
-
-  plugins: [
-    tailwindcssAnimate,
-    tailwindcssMotion,
-    utilities,
-    base,
-    // fluid, //fluid tailwind uncomment this to use fluid tailwind
-  ],
 } satisfies Config
