@@ -1,4 +1,5 @@
 "use client";
+import { useSyncExternalStore } from "react";
 import { LaptopIcon, Moon, Sun } from "lucide-react";
 import {
 	Tooltip,
@@ -21,6 +22,9 @@ const THEME_INDICATOR_POSITION = {
 } as const;
 type ThemeKey = keyof typeof THEME_INDICATOR_POSITION;
 
+const DEFAULT_THEME: ThemeKey = "system";
+const emptySubscribe = () => () => {};
+
 export function ModeToggle({
 	className,
 	iconClassName,
@@ -29,15 +33,16 @@ export function ModeToggle({
 	iconClassName?: string;
 }) {
 	const { theme, setTheme } = useTheme();
-
-	const resolvedTheme = (theme ?? "system") as ThemeKey;
-	// indicator position from left side
-	const left = THEME_INDICATOR_POSITION[resolvedTheme];
+	// Keep SSR + first client paint identical; apply stored theme only after hydrate.
+	const mounted = useSyncExternalStore(emptySubscribe, () => true, () => false);
+	const displayTheme = (
+		mounted ? (theme ?? DEFAULT_THEME) : DEFAULT_THEME
+	) as ThemeKey;
+	const left = THEME_INDICATOR_POSITION[displayTheme];
 
 	return (
 		<RadioGroup
-			value={theme ?? "system"}
-			defaultValue="system"
+			value={displayTheme}
 			className={cn(
 				"relative flex w-fit min-w-min gap-0 overflow-hidden rounded-md bg-popover backdrop-blur-2xl",
 				className,
